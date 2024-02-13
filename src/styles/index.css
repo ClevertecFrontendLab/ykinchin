@@ -5,3 +5,10 @@
 @import '../pages/main-page/layout/sidebar/sidebar.module.scss';
 @import '../pages/main-page/layout/content/components/contentCard/contentCard.module.scss';
 @import '../pages/main-page/layout/header/header.module.scss';
+
+html,
+body,
+#root,
+.ant-layout {
+    height: 100%;
+}
