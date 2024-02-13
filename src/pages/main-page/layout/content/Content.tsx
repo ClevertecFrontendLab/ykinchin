@@ -86,6 +86,7 @@ const Content: FC = () => {
                                             marginBlockEnd: `${!isAboveMediumScreen && 0}`,
                                             maxWidth: 670,
                                             lineHeight: '130%',
+                                            fontWeight: 500,
                                         }}
                                     >
                                         CleverFit — это не просто приложение, а твой личный помощник

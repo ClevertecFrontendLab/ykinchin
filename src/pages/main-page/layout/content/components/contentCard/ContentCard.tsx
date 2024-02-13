@@ -1,4 +1,3 @@
-import { Typography } from 'antd';
 import { FC } from 'react';
 import { IContentCard } from 'src/shared/types';
 import CustomButton from '../../../../../../shared/components/customButton/CustomButton';
@@ -10,10 +9,9 @@ interface IContentCardProps {
 }
 
 const ContentCard: FC<IContentCardProps> = ({ data }) => {
-    const { Text } = Typography;
     return (
         <CustomCard
-            title={<Text style={{ whiteSpace: 'wrap' }}>{data.title}</Text>}
+            title={data.title}
             bordered={false}
             headStyle={{
                 textAlign: 'center',
