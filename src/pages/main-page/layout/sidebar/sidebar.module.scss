@@ -8,7 +8,7 @@
     height: auto;
 
     @include m {
-        position: fixed;
+        position: absolute;
         height: 100svh;
         z-index: 5;
     }

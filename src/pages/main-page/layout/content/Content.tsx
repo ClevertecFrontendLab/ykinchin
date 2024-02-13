@@ -15,7 +15,11 @@ const listData: string[] = [
 ];
 
 const cardData: IContentCard[] = [
-    { title: 'Расписать тренировки', icon: <HeartFilled />, buttonText: 'Тренировки' },
+    {
+        title: 'Расписать тренировки',
+        icon: <HeartFilled />,
+        buttonText: 'Тренировки',
+    },
     {
         title: 'Назначить каледарь',
         icon: <CalendarTwoTone twoToneColor={['#1d39c4', '#1d39c4']} />,

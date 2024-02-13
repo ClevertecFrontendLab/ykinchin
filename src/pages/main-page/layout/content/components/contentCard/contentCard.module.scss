@@ -11,9 +11,16 @@
         justify-content: center;
         align-items: center;
 
+        svg {
+            color: variables.$primary-light-6;
+        }
+
         &:hover {
             border: 1px solid variables.$primary-light-7;
-            color: variables.$primary-light-7 !important;
+
+            * {
+                color: variables.$primary-light-7;
+            }
         }
 
         span:first-child {

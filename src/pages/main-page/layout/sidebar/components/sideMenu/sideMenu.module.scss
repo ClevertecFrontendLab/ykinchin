@@ -9,6 +9,9 @@
             display: none;
         }
     }
+    svg {
+        color: variables.$primary-light-9;
+    }
 }
 
 .menuCollapsed {
@@ -18,10 +21,10 @@
     li > span:nth-child(2) {
         display: none;
     }
-}
 
-svg {
-    color: variables.$primary-light-9;
+    svg {
+        color: variables.$primary-light-9;
+    }
 }
 
 .ant-menu .ant-menu-item {
