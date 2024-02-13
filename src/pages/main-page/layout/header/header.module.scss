@@ -1,0 +1,88 @@
+@use '../../../../styles/variables';
+@import '../../../../styles/media';
+
+.ant-layout-header {
+    background-color: variables.$geekblue-1;
+    height: auto;
+    font-family: 'Inter', sans-serif;
+    padding: 16px 24px;
+
+    @include m {
+        height: 166px;
+    }
+
+    .ant-page-header {
+        padding: 0;
+
+        .ant-breadcrumb {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+        }
+
+        .ant-page-header-heading {
+            .ant-page-header-heading-left {
+                margin: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                .ant-page-header-heading-title {
+                    padding: 6px 0;
+                    margin: 0;
+                    max-width: 1010px;
+                    white-space: normal;
+                    font-weight: 700;
+                    font-size: 38px;
+                    line-height: 128%;
+
+                    @include s {
+                        width: max-content;
+                        font-size: 24px;
+                        font-weight: 500;
+                        white-space: pre-wrap;
+                    }
+
+                    @include m {
+                        padding: 0;
+                        font-size: 20px;
+                        width: 100%;
+                    }
+                }
+
+                .ant-page-header-heading-sub-title {
+                    align-self: flex-start;
+                    text-align: right;
+                    font-weight: 500;
+                    margin: 0;
+                    min-width: 105px;
+                    display: flex;
+                    justify-content: end;
+
+                    :hover {
+                        color: variables.$primary-light-7;
+                    }
+
+                    @include s {
+                        min-width: 0;
+
+                        span:first-child {
+                            display: none;
+                        }
+                    }
+
+                    @include m {
+                        min-width: 32px;
+
+                        span:first-child {
+                            display: inline;
+                        }
+                        span:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@import 'antd/dist/antd.css';
+@import '../pages/main-page/layout/sidebar/components/sideMenu/sideMenu.module.scss';
+@import '../pages/main-page/layout/sidebar/sidebar.module.scss';
+@import '../pages/main-page/layout/header/header.module.scss';

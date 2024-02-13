@@ -1,0 +1,63 @@
+@use '../../../../styles/variables';
+@import '../../../../styles/media';
+
+.ant-layout-sider {
+    background-color: variables.$primary-inverse;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+    height: auto;
+
+    @include m {
+        position: fixed;
+        height: 100svh;
+        z-index: 5;
+    }
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+
+    .topMenu {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include m {
+            padding-top: 0;
+        }
+
+        .logo {
+            width: 133px;
+            margin: 0 0 45px 29px;
+            height: 64px;
+
+            @include m {
+                width: 72px;
+                margin: 0 auto 13px;
+                height: 50px;
+            }
+        }
+
+        .logoCollapsed {
+            width: 111px;
+            margin-left: 18px;
+            height: 64px;
+            margin-bottom: 45px;
+        }
+    }
+
+    .logoutWrapper {
+        height: max-content;
+
+        button {
+            width: 100%;
+        }
+    }
+}
