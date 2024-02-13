@@ -27,7 +27,7 @@ const Sidebar: FC = () => {
         : '64px';
 
     return (
-        <Sider width={sideBarWidth}>
+        <Sider width={sideBarWidth} style={{ minHeight: '100%' }}>
             <div className={styles.wrapper}>
                 <div className={styles.topMenu}>
                     <IconWrapper
