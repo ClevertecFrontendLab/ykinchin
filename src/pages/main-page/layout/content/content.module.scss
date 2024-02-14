@@ -1,0 +1,37 @@
+@import '../../../../styles/media';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 24px 42px;
+    font-family: 'Inter', sans-serif;
+
+    @include m {
+        padding: 24px 16px;
+    }
+
+    .wrapper {
+        max-width: 752px;
+        margin-bottom: 24px;
+
+        .card {
+            border-radius: 2px;
+            height: auto;
+
+            .list {
+                margin: 0;
+                padding: 0;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 130%;
+
+                * {
+                    border: 0;
+                    color: #061178;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

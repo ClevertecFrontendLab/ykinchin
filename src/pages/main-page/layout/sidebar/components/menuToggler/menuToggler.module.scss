@@ -1,0 +1,67 @@
+@use '../../../../../../styles/variables';
+
+@import '../../../../../../styles/media';
+
+.wrapper {
+    position: absolute;
+    top: 49%;
+    right: -35px;
+    transform: rotate(90deg);
+    z-index: 2;
+
+    @include m {
+        top: 30px;
+    }
+
+    .figure {
+        position: relative;
+        width: 50px;
+        height: 20px;
+        background-color: variables.$primary-inverse;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include m {
+            width: 40px;
+            height: 35px;
+        }
+    }
+
+    .figure::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 13px solid transparent;
+        border-bottom: 20px solid variables.$primary-inverse;
+
+        @include m {
+            left: -5px;
+            border-left: 5px solid transparent;
+            border-bottom: 35px solid variables.$primary-inverse;
+        }
+    }
+
+    .figure::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 0;
+        height: 0;
+        border-left: 13px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 20px solid variables.$primary-inverse;
+
+        @include m {
+            right: -5px;
+            border-right: 5px solid transparent;
+            border-bottom: 35px solid variables.$primary-inverse;
+        }
+    }
+}
