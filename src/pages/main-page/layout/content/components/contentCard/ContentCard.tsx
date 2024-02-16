@@ -1,7 +1,7 @@
+import CustomButton from '@components/customButton/CustomButton';
+import CustomCard from '@components/customCard/CustomCard';
 import { FC } from 'react';
 import { IContentCard } from 'src/shared/types';
-import CustomButton from '../../../../../../shared/components/customButton/CustomButton';
-import CustomCard from '../../../../../../shared/components/customCard/CustomCard';
 import styles from './contentCard.module.scss';
 
 interface IContentCardProps {

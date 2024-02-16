@@ -1,8 +1,8 @@
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import useMediaQuery from '@hooks/useMediaQuery';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
 import React, { FC } from 'react';
 import { IContentCard } from 'src/shared/types';
-import useMediaQuery from '../../../../shared/hooks/useMediaQuery';
 import BottomContent from './components/bottomContent/BottomContent';
 import ContentCard from './components/contentCard/ContentCard';
 import styles from './content.module.scss';

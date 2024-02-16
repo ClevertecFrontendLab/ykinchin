@@ -1,8 +1,8 @@
+import CustomButton from '@components/customButton/CustomButton';
+import IconWrapper from '@components/icons/IconWrapper';
+import Logout from '@components/icons/svgs/Logout';
 import { Divider } from 'antd';
 import { FC } from 'react';
-import CustomButton from '../../../../../../shared/components/customButton/CustomButton';
-import IconWrapper from '../../../../../../shared/components/icons/IconWrapper';
-import Logout from '../../../../../../shared/components/icons/svgs/Logout';
 
 const LogoutBtn: FC = () => {
     return (

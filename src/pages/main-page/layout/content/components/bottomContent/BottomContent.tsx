@@ -1,9 +1,9 @@
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
+import CustomButton from '@components/customButton/CustomButton';
+import CustomCard from '@components/customCard/CustomCard';
+import useMediaQuery from '@hooks/useMediaQuery';
 import { Col, Row, Typography } from 'antd';
 import { FC } from 'react';
-import CustomButton from '../../../../../../shared/components/customButton/CustomButton';
-import CustomCard from '../../../../../../shared/components/customCard/CustomCard';
-import useMediaQuery from '../../../../../../shared/hooks/useMediaQuery';
 import styles from './BottomContent.module.scss';
 
 const BottomContent: FC = () => {

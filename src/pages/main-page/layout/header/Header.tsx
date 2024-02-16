@@ -1,8 +1,8 @@
 import { SettingOutlined } from '@ant-design/icons';
+import CustomButton from '@components/customButton/CustomButton';
+import useMediaQuery from '@hooks/useMediaQuery';
 import { Layout, PageHeader } from 'antd';
 import { FC } from 'react';
-import CustomButton from '../../../../shared/components/customButton/CustomButton';
-import useMediaQuery from '../../../../shared/hooks/useMediaQuery';
 import styles from './header.module.scss';
 
 const Header: FC = () => {

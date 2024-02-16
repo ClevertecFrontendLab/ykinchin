@@ -1,11 +1,11 @@
+import CustomButton from '@components/customButton/CustomButton';
+import IconWrapper from '@components/icons/IconWrapper';
+import FullLogo from '@components/icons/svgs/FullLogo';
+import Logout from '@components/icons/svgs/Logout';
+import ShortLogo from '@components/icons/svgs/ShortLogo';
+import useMediaQuery from '@hooks/useMediaQuery';
 import { Layout, Typography } from 'antd';
 import { FC, useState } from 'react';
-import CustomButton from '../../../../shared/components/customButton/CustomButton';
-import IconWrapper from '../../../../shared/components/icons/IconWrapper';
-import FullLogo from '../../../../shared/components/icons/svgs/FullLogo';
-import Logout from '../../../../shared/components/icons/svgs/Logout';
-import ShortLogo from '../../../../shared/components/icons/svgs/ShortLogo';
-import useMediaQuery from '../../../../shared/hooks/useMediaQuery';
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';
 import styles from './sidebar.module.scss';
