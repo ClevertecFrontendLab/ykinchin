@@ -10,8 +10,6 @@ const Header: FC = () => {
     const isBelowMediumScreen = useMediaQuery('(min-width:834px)');
     const isMobile = useMediaQuery('(max-width:425px)');
 
-    console.log(isBelowMediumScreen && !isMobile);
-
     const routes = [
         {
             path: '/',
