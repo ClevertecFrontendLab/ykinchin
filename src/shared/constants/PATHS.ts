@@ -1,4 +1,4 @@
-const PATHS = {
+export const PATHS = {
     main: '/',
 
     auth: '/auth',
