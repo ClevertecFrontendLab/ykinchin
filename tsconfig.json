@@ -19,8 +19,8 @@
         "baseUrl": ".",
         "paths": {
             "@public/*": ["./public/*"],
-            "@components/*": ["./src/components/*"],
-            "@constants/*": ["./src/constants/*"],
+            "@components/*": ["./src/shared/components/*"],
+            "@constants/*": ["./src/shared/constants/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@pages/*": ["./src/pages/*"],
             "@redux/*": ["./src/redux/*"],
