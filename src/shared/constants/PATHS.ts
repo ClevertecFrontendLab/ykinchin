@@ -1,5 +1,5 @@
 const PATHS = {
-    main: '/main',
+    main: '/',
 
     auth: '/auth',
     registration: '/auth/registration',
