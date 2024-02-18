@@ -1,8 +1,7 @@
 import { PATHS } from '@constants/PATHS';
-import AuthLayout from '@pages/authLayuot/AuthLayout';
+import AuthLayout from '@pages/authPage/authLayuot/AuthLayout';
+import AuthPage from '@pages/authPage/AuthPage';
 import { MainPage } from '@pages/main-page';
-import SignInPage from '@pages/signIn/signInPage';
-import SignUpPage from '@pages/signUp/signUpPage';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -11,8 +10,8 @@ const PageRouter: FC = () => {
         <Routes>
             <Route path={PATHS.main} element={<MainPage />} />
             <Route path={PATHS.auth} element={<AuthLayout />}>
-                <Route index element={<SignInPage />} />
-                <Route path={PATHS.registration} element={<SignUpPage />} />
+                <Route index element={<AuthPage />} />
+                <Route path={PATHS.registration} element={<AuthPage />} />
             </Route>
         </Routes>
     );
