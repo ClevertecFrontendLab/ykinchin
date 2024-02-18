@@ -1,0 +1,35 @@
+@use '../../../styles/variables';
+
+.form {
+    width: 368px;
+    height: 374px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+
+    .resetPassBtn {
+        color: variables.$primary-light-6;
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+    .submitBtn {
+        background-color: variables.$primary-light-6;
+    }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: variables.$primary-light-6;
+    border-color: variables.$primary-light-6;
+}
+
+.ant-input-group-addon {
+    width: 71px;
+}
+
+.ant-form-item-extra {
+    font-size: 12px;
+}
