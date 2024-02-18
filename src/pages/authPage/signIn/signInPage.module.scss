@@ -1,0 +1,21 @@
+@use '../../../styles/variables';
+
+.form {
+    width: 368px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+
+    .resetPassBtn {
+        color: variables.$primary-light-6;
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+    .submitBtn {
+        background-color: variables.$primary-light-6;
+    }
+}
