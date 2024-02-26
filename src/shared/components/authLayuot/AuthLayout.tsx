@@ -27,9 +27,9 @@ const AuthLayout: FC = () => {
             >
                 <div className={styles.blurWrapper}>
                     <Outlet />
+                    {showLoader && <Loader />}
                 </div>
             </Content>
-            {showLoader && <Loader />}
         </Layout>
     );
 };
