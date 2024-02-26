@@ -3,13 +3,18 @@ import { FC } from 'react';
 
 import styles from './mainpagelayot.module.scss';
 
+import Loader from '@components/loader/Loader';
+import { useAppSelector } from '@hooks/reduxHooks';
 import bg from '../../../assets/main_page_light.png';
 import Content from './content/Content';
 import Header from './header/Header';
 import Sidebar from './sidebar/Sidebar';
 
 const MainPageLayout: FC = () => {
-    return (
+    const isLoading = useAppSelector((state) => state.loader.showLoader);
+    return isLoading ? (
+        <Loader />
+    ) : (
         <Layout
             className={styles.layout}
             style={{
