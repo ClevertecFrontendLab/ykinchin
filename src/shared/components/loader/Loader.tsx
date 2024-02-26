@@ -16,7 +16,7 @@ const Loader: FC = () => {
     };
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} data-test-id='loader'>
             <div className={styles.loader}>
                 <Lottie options={defaultOptions} />;
             </div>
