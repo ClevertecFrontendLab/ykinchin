@@ -1,10 +1,10 @@
 export const PATHS = {
-    main: '/',
+    main: '/main',
 
     auth: '/auth',
     registration: '/auth/registration',
     confirmEmail: '/auth/confirm-email',
-    changePassword: ' /auth/change-password',
+    changePassword: '/auth/change-password',
 
     result: '/result',
     signUpSuccess: '/result/success',

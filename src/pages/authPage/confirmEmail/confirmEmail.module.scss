@@ -1,0 +1,44 @@
+@use '../../../styles/variables';
+@import '../../../styles/media';
+
+.title {
+    width: auto;
+
+    @include m {
+        width: 300px;
+    }
+}
+
+.wrapper {
+    margin-top: -4px;
+    margin-bottom: -10px;
+
+    .container {
+        height: max-content;
+        width: auto;
+        display: flex;
+        gap: 12px;
+
+        @include m {
+            gap: 10px;
+            width: 280px;
+        }
+    }
+
+    .character {
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        border: 1px solid variables.$neutral-grey-5;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+    }
+
+    .characterError {
+        border: 1px solid variables.$character-light-error;
+    }
+}

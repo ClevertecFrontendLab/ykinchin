@@ -1,4 +1,5 @@
 @use '../../../styles/variables';
+@import '../../../styles/media';
 
 .form {
     width: 368px;
@@ -10,12 +11,31 @@
     .resetPassBtn {
         color: variables.$primary-light-6;
         font-size: 16px;
+
+        @include m {
+            font-size: 14px;
+        }
     }
 
     .btn {
         width: 100%;
+        font-size: 16px;
+
+        @include m {
+            font-size: 14px;
+        }
     }
+
     .submitBtn {
         background-color: variables.$primary-light-6;
     }
+
+    @include m {
+        width: 296px;
+    }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: variables.$primary-light-6;
+    border-color: variables.$primary-light-6;
 }

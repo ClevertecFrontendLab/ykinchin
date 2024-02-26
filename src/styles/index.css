@@ -5,5 +5,6 @@
 @import '../pages/main-page/layout/sidebar/sidebar.module.scss';
 @import '../pages/main-page/layout/content/components/contentCard/contentCard.module.scss';
 @import '../pages/main-page/layout/header/header.module.scss';
-@import '../pages/authPage/signUp/signUpPage.module.scss';
+@import '../pages/authPage/signIn/signInPage.module.scss';
 @import '../pages/authPage/authPage.module.scss';
+@import '../shared/components/resultCard/resultCard.module.scss';

@@ -1,4 +1,5 @@
 @use '../../styles/variables';
+@import '../../styles/media';
 
 .formWrapper {
     background-color: variables.$neutral-grey-1;
@@ -6,16 +7,37 @@
     width: 539px;
     display: flex;
     justify-content: center;
+    margin-top: 0;
 
     .formWithLogo {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 40px;
+        margin-top: 0;
+
+        .logo {
+            width: 309px;
+
+            @include m {
+                width: 200px;
+            }
+        }
 
         .formTabs {
             width: 100%;
         }
+
+        @include m {
+            gap: 30px;
+            margin-top: 18px;
+        }
+    }
+
+    @include m {
+        margin-top: -6px;
+        padding: 12px;
+        width: 328px;
     }
 }
 
@@ -39,6 +61,10 @@
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             padding-bottom: 10px;
+
+            @include m {
+                font-size: 14px;
+            }
         }
     }
 }
