@@ -14,20 +14,20 @@ import SignUpPage from './signUp/SignUpPage';
 const AuthPage: FC = () => {
     const location = useLocation();
 
-    const getDefaultActiveKey = () => {
-        if (location.pathname === PATHS.registration) {
-            return '2';
-        }
-        return '1';
-    };
+    // const getDefaultActiveKey = () => {
+    //     if (location.pathname === PATHS.registration) {
+    //         return '2';
+    //     }
+    //     return '1';
+    // };
 
-    const handleChange = (key: string) => {
-        if (key === '1') {
-            history.push(PATHS.auth);
-        } else if (key === '2') {
-            history.push(PATHS.registration);
-        }
-    };
+    // const handleChange = (key: string) => {
+    //     if (key === '1') {
+    //         history.push(PATHS.auth);
+    //     } else if (key === '2') {
+    //         history.push(PATHS.registration);
+    //     }
+    // };
 
     return (
         <div className={styles.formWrapper}>
@@ -35,29 +35,17 @@ const AuthPage: FC = () => {
                 <IconWrapper icon={FullLogo} className={styles.logo} />
                 <div className={styles.formTabs}>
                     <Tabs
-                        size='large'
-                        centered
-                        defaultActiveKey={getDefaultActiveKey()}
-                        onChange={handleChange}
-                        tabBarStyle={{
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginBottom: '14px',
-                        }}
-                        items={[
-                            {
-                                label: 'Вход',
-                                key: '1',
-                                children: <SignInPage />,
-                            },
-                            {
-                                label: 'Регистрация',
-                                key: '2',
-                                children: <SignUpPage />,
-                            },
-                        ]}
-                    />
+                        defaultActiveKey={location?.pathname}
+                        className={styles.tabs}
+                        onChange={(key) => history.push(key)}
+                    >
+                        <Tabs.TabPane tab='Вход' key={PATHS.auth}>
+                            <SignInPage />
+                        </Tabs.TabPane>
+                        <Tabs.TabPane tab='Регистрация' key={PATHS.registration}>
+                            <SignUpPage />
+                        </Tabs.TabPane>
+                    </Tabs>
                 </div>
             </div>
         </div>
