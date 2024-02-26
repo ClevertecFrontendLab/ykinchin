@@ -1,8 +1,9 @@
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
-import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const ErrorUserExist: FC = () => {
     const prevLocation = usePrevLocation();

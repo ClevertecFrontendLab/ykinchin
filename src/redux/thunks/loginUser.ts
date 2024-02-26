@@ -1,10 +1,11 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { replace } from 'redux-first-history';
+
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { setAuth } from '@redux/slices/authSlice';
 import { setIsLoading } from '@redux/slices/loaderSlice';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { replace } from 'redux-first-history';
 
 interface ILoginData {
     email: string;
@@ -16,7 +17,7 @@ interface ILoginData {
 export const login = createAsyncThunk('auth/login', async (data: ILoginData, thunkAPI) => {
     try {
         thunkAPI.dispatch(setIsLoading(true));
-        const response = await axios.post(
+        await axios.post(
             REQUEST_URL.login,
             {
                 email: data.email,

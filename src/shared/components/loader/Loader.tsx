@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import Lottie from 'react-lottie';
-import animationData from './loader.json';
+
 import styles from './loader.module.scss';
+
+import animationData from './loader.json';
 
 const Loader: FC = () => {
     const defaultOptions = {

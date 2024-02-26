@@ -1,11 +1,13 @@
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
-import useMediaQuery from '@hooks/useMediaQuery';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
 import React, { FC } from 'react';
+
+import styles from './content.module.scss';
+
+import useMediaQuery from '@hooks/useMediaQuery';
 import { IContentCard } from 'src/shared/types';
 import BottomContent from './components/bottomContent/BottomContent';
 import ContentCard from './components/contentCard/ContentCard';
-import styles from './content.module.scss';
 
 const listData: string[] = [
     'планировать свои тренировки на каледаре, выбирая тип и уровень нагрузки;',

@@ -1,10 +1,9 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 import { PATHS } from '@constants/PATHS';
 import useAuth from '@hooks/useAuth';
-import { Navigate } from 'react-router-dom';
 import MainPageLayout from './layout/MainPageLayout';
-import './main-page.css';
 
 export const MainPage: React.FC = () => {
     const isAuth = useAuth();

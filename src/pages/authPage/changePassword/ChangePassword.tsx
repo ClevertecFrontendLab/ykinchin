@@ -1,3 +1,9 @@
+import { Card, Form, Space, Typography } from 'antd';
+import { ChangeEvent, FC, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+
+import styles from './changePassword.module.scss';
+
 import CustomButton from '@components/customButton/CustomButton';
 import PasswordInput from '@components/passwordInput/PasswordInput';
 import RepeatPasswordInput from '@components/repeatPasswordInput/RepeatPasswordInput';
@@ -6,10 +12,6 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
-import { Card, Form, Space, Typography } from 'antd';
-import { ChangeEvent, FC, useState } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-import styles from './changePassword.module.scss';
 
 const ChangePassword: FC = () => {
     const location = useLocation();

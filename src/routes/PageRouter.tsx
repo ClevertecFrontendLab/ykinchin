@@ -1,3 +1,6 @@
+import { FC } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+
 import AuthLayout from '@components/authLayuot/AuthLayout';
 import { PATHS } from '@constants/PATHS';
 import AuthPage from '@pages/authPage/AuthPage';
@@ -12,8 +15,6 @@ import ErrorRetryReg from '@pages/resultPage/errorRetryReg/ErrorRetryReg';
 import ErrorUserExist from '@pages/resultPage/errorUserExist/ErrorUserExist';
 import SuccessChangePassword from '@pages/resultPage/successChangePassword/SuccessChangePassword';
 import SuccessPage from '@pages/resultPage/successPage/SuccessPage';
-import { FC } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
 
 const PageRouter: FC = () => {
     return (

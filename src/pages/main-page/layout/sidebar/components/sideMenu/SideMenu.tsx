@@ -1,9 +1,11 @@
 import { CalendarTwoTone, HeartFilled, IdcardOutlined, TrophyFilled } from '@ant-design/icons';
-import useMediaQuery from '@hooks/useMediaQuery';
 import { Menu, MenuProps, Typography } from 'antd';
 import { FC } from 'react';
-import { TMenuButton } from 'src/shared/types';
+
 import styles from './sideMenu.module.scss';
+
+import useMediaQuery from '@hooks/useMediaQuery';
+import { TMenuButton } from 'src/shared/types';
 
 const menuData: TMenuButton[] = [
     {

@@ -1,9 +1,10 @@
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
-import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const ErrorLogin: FC = () => {
     const prevLocation = usePrevLocation();

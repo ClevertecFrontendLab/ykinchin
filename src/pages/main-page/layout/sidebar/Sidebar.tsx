@@ -1,3 +1,8 @@
+import { Layout, Typography } from 'antd';
+import { FC, useState } from 'react';
+
+import styles from './sidebar.module.scss';
+
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';
 import FullLogo from '@components/icons/svgs/FullLogo';
@@ -7,11 +12,8 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { history } from '@redux/configure-store';
 import { logout } from '@redux/slices/authSlice';
-import { Layout, Typography } from 'antd';
-import { FC, useState } from 'react';
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';
-import styles from './sidebar.module.scss';
 
 const Sidebar: FC = () => {
     const [isOpened, setIsOpened] = useState(false);

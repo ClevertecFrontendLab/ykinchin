@@ -1,14 +1,17 @@
 import { SettingOutlined } from '@ant-design/icons';
-import CustomButton from '@components/customButton/CustomButton';
-import useMediaQuery from '@hooks/useMediaQuery';
 import { Layout, PageHeader } from 'antd';
 import { FC } from 'react';
+
 import styles from './header.module.scss';
 
+import CustomButton from '@components/customButton/CustomButton';
+import useMediaQuery from '@hooks/useMediaQuery';
+
 const Header: FC = () => {
-    const { Header } = Layout;
     const isBelowMediumScreen = useMediaQuery('(min-width:834px)');
     const isMobile = useMediaQuery('(max-width:425px)');
+
+    const { Header } = Layout;
 
     const routes = [
         {

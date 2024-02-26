@@ -1,7 +1,8 @@
-import CustomButton from '@components/customButton/CustomButton';
 import { Card, Result } from 'antd';
 import { ResultStatusType } from 'antd/lib/result';
 import React, { FC } from 'react';
+
+import CustomButton from '@components/customButton/CustomButton';
 
 interface ResultCardProps {
     resultImg: React.ReactNode;
@@ -25,8 +26,6 @@ const ResultCard: FC<Partial<ResultCardProps>> = ({
     bodyStyle = { padding: 0 },
     test,
 }) => {
-    // const { Title, Text } = Typography;
-
     return (
         <Card bordered={false} bodyStyle={bodyStyle}>
             <Result
@@ -50,20 +49,6 @@ const ResultCard: FC<Partial<ResultCardProps>> = ({
                 ]}
             />
         </Card>
-
-        //         {children}
-        //         {btnText && (
-        //             <CustomButton
-        //                 onClick={onClick}
-        //                 size='large'
-        //                 type='primary'
-        //                 className={styles.btn}
-        //             >
-        //                 {btnText}
-        //             </CustomButton>
-        //         )}
-        //     </Space>
-        // </Card>
     );
 };
 

@@ -1,11 +1,13 @@
+import { Tabs } from 'antd';
+import { FC } from 'react';
+
+import styles from './authPage.module.scss';
+
 import IconWrapper from '@components/icons/IconWrapper';
 import FullLogo from '@components/icons/svgs/FullLogo';
 import { PATHS } from '@constants/PATHS';
 import { history } from '@redux/configure-store';
-import { Tabs } from 'antd';
-import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import styles from './authPage.module.scss';
 import SignInPage from './signIn/SignInPage';
 import SignUpPage from './signUp/SignUpPage';
 

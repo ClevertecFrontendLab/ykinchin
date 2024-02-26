@@ -1,4 +1,10 @@
 import { GooglePlusOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Col, Form, Row, Space } from 'antd';
+import { RuleObject } from 'antd/lib/form';
+import { ChangeEvent, FC, useEffect, useState } from 'react';
+
+import styles from './signInPage.module.scss';
+
 import CustomButton from '@components/customButton/CustomButton';
 import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
@@ -6,10 +12,6 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import { setUser } from '@redux/slices/userSlice';
 import { checkEmail } from '@redux/thunks/checkEmail';
 import { login } from '@redux/thunks/loginUser';
-import { Button, Checkbox, Col, Form, Row, Space } from 'antd';
-import { RuleObject } from 'antd/lib/form';
-import { ChangeEvent, FC, useEffect, useState } from 'react';
-import styles from './signInPage.module.scss';
 
 const SignInPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -17,6 +19,28 @@ const SignInPage: FC = () => {
     const [formValue, setFormValue] = useState({ email: '', password: '' });
     const [isRememberChecked, setIsRememberChecked] = useState(false);
     const [isEmailValid, setIsEmailValid] = useState(false);
+
+    const validateEmail = async (_: RuleObject, value: string) => {
+        try {
+            await form.validateFields(['email']);
+            setIsEmailValid(true);
+        } catch (error) {
+            setIsEmailValid(false);
+        }
+    };
+
+    useEffect(() => {
+        const validate = async () => {
+            if (formValue.email.length === 0) {
+                setIsEmailValid(true);
+            } else {
+                await validateEmail({}, formValue.email);
+            }
+        };
+
+        validate();
+    }, [formValue.email]);
+
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setFormValue({ ...formValue, [e.target.name]: e.target.value });
     };
@@ -43,27 +67,6 @@ const SignInPage: FC = () => {
             await dispatch(checkEmail(formValue.email));
         }
     };
-
-    const validateEmail = async (_: RuleObject, value: string) => {
-        try {
-            await form.validateFields(['email']);
-            setIsEmailValid(true);
-        } catch (error) {
-            setIsEmailValid(false);
-        }
-    };
-
-    useEffect(() => {
-        const validate = async () => {
-            if (formValue.email.length === 0) {
-                setIsEmailValid(true);
-            } else {
-                await validateEmail({}, formValue.email);
-            }
-        };
-
-        validate();
-    }, [formValue.email]);
 
     return (
         <Form

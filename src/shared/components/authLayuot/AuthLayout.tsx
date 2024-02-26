@@ -1,14 +1,16 @@
-import Loader from '@components/loader/Loader';
-import { useAppSelector } from '@hooks/reduxHooks';
 import { Layout } from 'antd';
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import bg from '../../../assets/enter_page_light.png';
+
 import styles from './authLayout.module.scss';
+
+import Loader from '@components/loader/Loader';
+import { useAppSelector } from '@hooks/reduxHooks';
+import bg from '../../../assets/enter_page_light.png';
 
 const AuthLayout: FC = () => {
     const { Content } = Layout;
-    const { showLoader } = useAppSelector((state) => state.loader);
+    const showLoader = useAppSelector((state) => state.loader.showLoader);
 
     return (
         <Layout

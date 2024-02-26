@@ -1,11 +1,12 @@
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { registration } from '@redux/thunks/registerUser';
-import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const ErrorRetryReg: FC = () => {
     const prevLocation = usePrevLocation();
@@ -13,13 +14,9 @@ const ErrorRetryReg: FC = () => {
     const { email, password } = useAppSelector((state) => state.user);
 
     const onRetryHandler = async () => {
-        try {
-            history.back();
-            if (email && password) {
-                await dispatch(registration({ email, password }));
-            }
-        } catch (error) {
-            console.error('Error retrying registration:', error);
+        history.back();
+        if (email && password) {
+            await dispatch(registration({ email, password }));
         }
     };
 

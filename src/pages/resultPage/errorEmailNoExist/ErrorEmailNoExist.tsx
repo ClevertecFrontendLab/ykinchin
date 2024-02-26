@@ -1,11 +1,12 @@
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import CustomButton from '@components/customButton/CustomButton';
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
-import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const ErrorEmailNoExist: FC = () => {
     const prevLocation = usePrevLocation();

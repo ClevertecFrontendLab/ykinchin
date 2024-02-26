@@ -1,23 +1,35 @@
+import { Space, Typography } from 'antd';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import VerificationInput from 'react-verification-input';
+
+import styles from './confirmEmail.module.scss';
+
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
-import { Space, Typography } from 'antd';
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-import VerificationInput from 'react-verification-input';
-import styles from './confirmEmail.module.scss';
 
 const ConfirmEmail: FC = () => {
     const location = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
-    const verificationInputRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useAppDispatch();
+    const verificationInputRef = useRef<HTMLInputElement | null>(null);
     const { email, isError } = useAppSelector((state) => state.user);
     const [verificationCode, setVerificationCode] = useState<string>('');
+
+    const handleVerificationInputChange = (value: string) => {
+        setVerificationCode(value);
+    };
+
+    useEffect(() => {
+        if (verificationCode.length === 6 && isError) {
+            setVerificationCode('');
+        }
+    }, [verificationCode, isError]);
 
     const onPasteHandler = (e: React.ClipboardEvent<HTMLInputElement>) => {
         const pastedText = e.clipboardData.getData('text');
@@ -30,16 +42,6 @@ const ConfirmEmail: FC = () => {
     const onCompleteHandler = async (code: string) => {
         dispatch(confirmEmail({ email: email, code: code }));
     };
-
-    const handleVerificationInputChange = (value: string) => {
-        setVerificationCode(value);
-    };
-
-    useEffect(() => {
-        if (verificationCode.length === 6 && isError) {
-            setVerificationCode('');
-        }
-    }, [verificationCode, isError]);
 
     if (prevLocation !== PATHS.auth && prevLocation !== location.pathname) {
         return <Navigate to={PATHS.auth} />;

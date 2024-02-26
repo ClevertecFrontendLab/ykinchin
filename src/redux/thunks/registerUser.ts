@@ -1,9 +1,10 @@
-import { PATHS } from '@constants/PATHS';
-import { REQUEST_URL } from '@constants/requestUrl';
-import { setIsLoading } from '@redux/slices/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { push } from 'redux-first-history';
+
+import { PATHS } from '@constants/PATHS';
+import { REQUEST_URL } from '@constants/requestUrl';
+import { setIsLoading } from '@redux/slices/loaderSlice';
 
 interface IRegisterData {
     email: string;

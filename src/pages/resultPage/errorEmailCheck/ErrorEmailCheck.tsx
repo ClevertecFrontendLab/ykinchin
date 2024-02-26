@@ -1,12 +1,13 @@
+import { Card, Result } from 'antd';
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import CustomButton from '@components/customButton/CustomButton';
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { checkEmail } from '@redux/thunks/checkEmail';
-import { Card, Result } from 'antd';
-import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const ErrorEmailCheck: FC = () => {
     const prevLocation = usePrevLocation();
@@ -14,13 +15,9 @@ const ErrorEmailCheck: FC = () => {
     const { email } = useAppSelector((state) => state.user);
 
     const onRetunHandler = async () => {
-        try {
+        if (email) {
             history.back();
-            if (email) {
-                await dispatch(checkEmail(email));
-            }
-        } catch (e) {
-            console.log(e);
+            await dispatch(checkEmail(email));
         }
     };
 
