@@ -13,23 +13,22 @@ const AuthLayout: FC = () => {
     const showLoader = useAppSelector((state) => state.loader.showLoader);
 
     return (
-        <Layout
-            className={styles.layout}
-            style={{ background: `no-repeat center bottom url(${bg})`, backgroundSize: 'cover' }}
-        >
-            <Content
-                style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center bottom',
-                    backgroundSize: 'cover',
-                }}
-            >
-                <div className={styles.blurWrapper}>
-                    <Outlet />
-                    {showLoader && <Loader />}
-                </div>
-            </Content>
+        <Layout className={styles.layout}>
+            <div>
+                <Content
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center bottom',
+                        backgroundSize: 'cover',
+                    }}
+                >
+                    <div className={styles.blurWrapper}>
+                        <Outlet />
+                        {showLoader && <Loader />}
+                    </div>
+                </Content>
+            </div>
         </Layout>
     );
 };

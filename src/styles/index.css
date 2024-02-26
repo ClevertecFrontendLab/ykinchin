@@ -8,3 +8,9 @@
 @import '../pages/authPage/signIn/signInPage.module.scss';
 @import '../pages/authPage/authPage.module.scss';
 @import '../shared/components/resultCard/resultCard.module.scss';
+
+html,
+body,
+#root {
+    height: 100%;
+}
