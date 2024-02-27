@@ -1,10 +1,12 @@
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 import { Col, Row, Typography } from 'antd';
 import { FC } from 'react';
-import CustomButton from '../../../../../../shared/components/customButton/CustomButton';
-import CustomCard from '../../../../../../shared/components/customCard/CustomCard';
-import useMediaQuery from '../../../../../../shared/hooks/useMediaQuery';
+
 import styles from './BottomContent.module.scss';
+
+import CustomButton from '@components/customButton/CustomButton';
+import CustomCard from '@components/customCard/CustomCard';
+import useMediaQuery from '@hooks/useMediaQuery';
 
 const BottomContent: FC = () => {
     const isMobile = useMediaQuery('(max-width:425px)');

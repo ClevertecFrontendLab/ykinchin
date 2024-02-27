@@ -1,0 +1,53 @@
+@use '../../../styles/variables';
+@import '../../../styles/media';
+
+.form {
+    width: 368px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+
+    .resetPassBtn {
+        color: variables.$primary-light-6;
+        font-size: 16px;
+
+        @include m {
+            font-size: 14px;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+
+        svg {
+            display: block;
+
+            @include m {
+                display: none;
+            }
+        }
+
+        @include m {
+            font-size: 14px;
+
+            svg {
+                display: none;
+            }
+        }
+    }
+
+    .submitBtn {
+        background-color: variables.$primary-light-6;
+    }
+
+    @include m {
+        width: 296px;
+    }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: variables.$primary-light-6;
+    border-color: variables.$primary-light-6;
+}

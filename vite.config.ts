@@ -12,13 +12,14 @@ export default defineConfig({
     resolve: {
         alias: {
             '@public': path.resolve(__dirname, 'public'),
-            '@components': path.resolve(__dirname, 'src/components'),
-            '@constants': path.resolve(__dirname, 'src/constants'),
+            '@components': path.resolve(__dirname, 'src/shared/components'),
+            '@constants': path.resolve(__dirname, 'src/shared/constants'),
             '@hooks': path.resolve(__dirname, 'src/hooks'),
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@redux': path.resolve(__dirname, 'src/redux'),
             '@types': path.resolve(__dirname, 'src/types'),
-            '@utils': path.resolve(__dirname, 'src/utils'),
+            '@api': path.resolve(__dirname, 'src/shared/api'),
+            // '@utils': path.resolve(__dirname, 'src/utils'),
         },
     },
 });

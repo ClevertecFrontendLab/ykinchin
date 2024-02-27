@@ -1,5 +1,6 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { FC } from 'react';
+
 import styles from './menuToggler.module.scss';
 
 interface TogglerProps {

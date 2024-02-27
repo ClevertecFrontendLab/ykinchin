@@ -1,0 +1,39 @@
+@use '../../../styles/variables';
+@import '../../../styles/media';
+
+.ant-result {
+    font-family: 'Inter', sans-serif;
+    padding: 64px 84px;
+    width: 539px;
+
+    .ant-result-icon {
+        margin-bottom: 34px;
+    }
+
+    .ant-result-title {
+        line-height: 1.3;
+        font-weight: 500;
+    }
+
+    .ant-result-subtitle {
+        line-height: 1.3;
+    }
+
+    button {
+        background-color: variables.$primary-light-6;
+        font-size: 14px;
+    }
+
+    @include m {
+        padding: 32px 18px;
+        width: 329px;
+    }
+}
+
+.ant-result-info {
+    .ant-result-icon {
+        svg {
+            color: variables.$primary-light-6;
+        }
+    }
+}

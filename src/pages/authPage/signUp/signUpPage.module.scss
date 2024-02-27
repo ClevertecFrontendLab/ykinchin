@@ -1,0 +1,37 @@
+@use '../../../styles/variables';
+@import '../../../styles/media';
+
+.form {
+    width: 368px;
+    height: 374px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+
+    .input {
+        margin: 18px 0 32px;
+
+        @include m {
+            margin: 8px 0 32px;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+
+        @include m {
+            font-size: 14px;
+        }
+    }
+
+    .submitBtn {
+        background-color: variables.$primary-light-6;
+    }
+
+    @include m {
+        width: 296px;
+        gap: 10px;
+    }
+}

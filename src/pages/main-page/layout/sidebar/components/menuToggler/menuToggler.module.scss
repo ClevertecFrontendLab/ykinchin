@@ -1,5 +1,4 @@
 @use '../../../../../../styles/variables';
-
 @import '../../../../../../styles/media';
 
 .wrapper {
@@ -29,7 +28,7 @@
         }
     }
 
-    .figure::before {
+    .figure:before {
         content: '';
         position: absolute;
         top: 0;
@@ -47,7 +46,7 @@
         }
     }
 
-    .figure::after {
+    .figure:after {
         content: '';
         position: absolute;
         top: 0;

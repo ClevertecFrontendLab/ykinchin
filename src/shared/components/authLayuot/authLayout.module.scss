@@ -1,0 +1,14 @@
+.layout {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+
+    .blurWrapper {
+        min-height: 100vh;
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(121, 156, 212, 0.5);
+    }
+}
