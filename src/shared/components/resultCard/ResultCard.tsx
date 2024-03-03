@@ -10,9 +10,10 @@ interface ResultCardProps {
     resultDescription: React.ReactNode;
     btnText: string;
     onClick: () => void;
-    children?: React.ReactNode;
-    status?: ResultStatusType;
-    bodyStyle?: React.CSSProperties;
+    children: React.ReactNode;
+    status: ResultStatusType;
+    bodyStyle: React.CSSProperties;
+    resultStyle: React.CSSProperties;
     test: string;
 }
 
@@ -25,10 +26,12 @@ const ResultCard: FC<Partial<ResultCardProps>> = ({
     status,
     bodyStyle = { padding: 0 },
     test,
+    resultStyle,
 }) => {
     return (
         <Card bordered={false} bodyStyle={bodyStyle}>
             <Result
+                style={resultStyle}
                 title={resultTitle}
                 status={status}
                 subTitle={resultDescription}

@@ -1,5 +1,6 @@
 export const PATHS = {
     main: '/main',
+    feedbacks: '/feedbacks',
 
     auth: '/auth',
     registration: '/auth/registration',

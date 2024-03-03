@@ -6,4 +6,6 @@ export const REQUEST_URL = {
     checkEmail: `${BASE_URL}auth/check-email`,
     confirmEmail: `${BASE_URL}auth/confirm-email`,
     changePassword: `${BASE_URL}auth/change-password`,
+    feedbacks: `${BASE_URL}feedback`,
+    googleAuth: `${BASE_URL}auth/google`,
 };

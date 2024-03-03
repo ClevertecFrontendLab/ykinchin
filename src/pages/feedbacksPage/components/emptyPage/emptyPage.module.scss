@@ -1,0 +1,27 @@
+@import '../../../../styles/media';
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    gap: 0px;
+
+    @include m {
+        justify-content: start;
+        padding: 24px 16px;
+        gap: 48px;
+    }
+
+    .card {
+        height: 284px;
+        position: 'relative';
+        top: -18px;
+
+        @include m {
+            height: 314px;
+            top: 0;
+        }
+    }
+}

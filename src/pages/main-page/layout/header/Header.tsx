@@ -13,13 +13,6 @@ const Header: FC = () => {
 
     const { Header } = Layout;
 
-    const routes = [
-        {
-            path: '/',
-            breadcrumbName: 'Главная',
-        },
-    ];
-
     const buttonStyle = isMobile
         ? {
               display: 'flex',
@@ -66,7 +59,6 @@ const Header: FC = () => {
                         Настройки
                     </CustomButton>
                 }
-                breadcrumb={{ routes }}
             />
         </Header>
     );

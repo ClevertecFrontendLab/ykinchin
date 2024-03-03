@@ -10,14 +10,13 @@ import { setIsLoading } from '@redux/slices/loaderSlice';
 interface ILoginData {
     email: string;
     password?: string;
-    token: string;
     rememberCheck: boolean;
 }
 
 export const login = createAsyncThunk('auth/login', async (data: ILoginData, thunkAPI) => {
     try {
         thunkAPI.dispatch(setIsLoading(true));
-        await axios.post(
+        const result = await axios.post(
             REQUEST_URL.login,
             {
                 email: data.email,
@@ -29,7 +28,7 @@ export const login = createAsyncThunk('auth/login', async (data: ILoginData, thu
         );
         thunkAPI.dispatch(
             setAuth({
-                accessToken: data.token,
+                accessToken: result.data.accessToken,
                 remeberCheck: data.rememberCheck,
             }),
         );

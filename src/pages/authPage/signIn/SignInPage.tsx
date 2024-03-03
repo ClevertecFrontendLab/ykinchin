@@ -8,6 +8,7 @@ import styles from './signInPage.module.scss';
 import CustomButton from '@components/customButton/CustomButton';
 import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
+import { REQUEST_URL } from '@constants/requestUrl';
 import { useAppDispatch } from '@hooks/reduxHooks';
 import { setUser } from '@redux/slices/userSlice';
 import { checkEmail } from '@redux/thunks/checkEmail';
@@ -50,7 +51,6 @@ const SignInPage: FC = () => {
             const values = await form.validateFields();
             await dispatch(
                 login({
-                    token: values.email,
                     rememberCheck: isRememberChecked,
                     email: formValue.email,
                     password: formValue.password,
@@ -66,6 +66,10 @@ const SignInPage: FC = () => {
         if (formValue.email.length !== 0) {
             await dispatch(checkEmail(formValue.email));
         }
+    };
+
+    const onGoogleAuthHandler = () => {
+        window.location.href = REQUEST_URL.googleAuth;
     };
 
     return (
@@ -143,6 +147,7 @@ const SignInPage: FC = () => {
                         size='large'
                         type='default'
                         className={styles.btn}
+                        onClick={onGoogleAuthHandler}
                     >
                         Войти через Google
                     </Button>

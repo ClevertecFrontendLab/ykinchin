@@ -1,11 +1,14 @@
 import { FC } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import AuthLayout from '@components/authLayuot/AuthLayout';
+import MainLayout from '@components/mainLayout/MainLayout';
 import { PATHS } from '@constants/PATHS';
 import AuthPage from '@pages/authPage/AuthPage';
 import ChangePassword from '@pages/authPage/changePassword/ChangePassword';
 import ConfirmEmail from '@pages/authPage/confirmEmail/ConfirmEmail';
+import GoogleRedirect from '@pages/authPage/googleRedirect/GoogleRedirect';
+import Feedbacks from '@pages/feedbacksPage/Feedbacks';
 import { MainPage } from '@pages/main-page';
 import ErrorChangePassword from '@pages/resultPage/errorChangePassword/ErrorChangePassword';
 import ErrorEmailCheck from '@pages/resultPage/errorEmailCheck/ErrorEmailCheck';
@@ -19,9 +22,12 @@ import SuccessPage from '@pages/resultPage/successPage/SuccessPage';
 const PageRouter: FC = () => {
     return (
         <Routes>
-            <Route path='/' element={<Navigate to={PATHS.main} />} />
+            <Route path='/' element={<GoogleRedirect />} />
 
-            <Route path={PATHS.main} element={<MainPage />} />
+            <Route element={<MainLayout />}>
+                <Route path={PATHS.main} element={<MainPage />} />
+                <Route path={PATHS.feedbacks} element={<Feedbacks />} />
+            </Route>
 
             <Route path={PATHS.auth} element={<AuthLayout />}>
                 <Route index element={<AuthPage />} />

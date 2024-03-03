@@ -6,12 +6,19 @@ import styles from './BottomContent.module.scss';
 
 import CustomButton from '@components/customButton/CustomButton';
 import CustomCard from '@components/customCard/CustomCard';
+import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
+import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 
 const BottomContent: FC = () => {
+    const dispatch = useAppDispatch();
     const isMobile = useMediaQuery('(max-width:425px)');
 
     const { Text, Title } = Typography;
+
+    const onFeedbackHandler = () => {
+        dispatch(getFeedbacks());
+    };
 
     return (
         <Row gutter={[0, 24]} className={styles.wrapper} justify='space-between' align='bottom'>
@@ -24,7 +31,12 @@ const BottomContent: FC = () => {
                     justifyContent: `${isMobile && 'center'}`,
                 }}
             >
-                <CustomButton size='large' className={styles.reviewButton}>
+                <CustomButton
+                    size='large'
+                    className={styles.reviewButton}
+                    onClick={onFeedbackHandler}
+                    test='see-reviews'
+                >
                     Смотреть отзывы
                 </CustomButton>
             </Col>

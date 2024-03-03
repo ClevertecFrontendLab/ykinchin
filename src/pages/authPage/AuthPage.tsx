@@ -14,21 +14,6 @@ import SignUpPage from './signUp/SignUpPage';
 const AuthPage: FC = () => {
     const location = useLocation();
 
-    // const getDefaultActiveKey = () => {
-    //     if (location.pathname === PATHS.registration) {
-    //         return '2';
-    //     }
-    //     return '1';
-    // };
-
-    // const handleChange = (key: string) => {
-    //     if (key === '1') {
-    //         history.push(PATHS.auth);
-    //     } else if (key === '2') {
-    //         history.push(PATHS.registration);
-    //     }
-    // };
-
     return (
         <div className={styles.formWrapper}>
             <div className={styles.formWithLogo}>
