@@ -1,5 +1,4 @@
 import { Col, Row, Typography } from 'antd';
-import { FC } from 'react';
 
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
@@ -10,7 +9,7 @@ import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 
 import s from './BottomContent.module.scss';
 
-const BottomContent: FC = () => {
+const BottomContent = () => {
     const dispatch = useAppDispatch();
     const isMobile = useMediaQuery('(max-width:425px)');
 

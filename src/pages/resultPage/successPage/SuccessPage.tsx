@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { PATHS } from '@constants/PATHS';
@@ -7,7 +6,7 @@ import { history } from '@redux/configure-store';
 
 import ResultCard from '../../../shared/components/resultCard/ResultCard';
 
-const SuccessPage: FC = () => {
+const SuccessPage = () => {
     const prevLocation = usePrevLocation();
 
     if (prevLocation !== PATHS.registration) {

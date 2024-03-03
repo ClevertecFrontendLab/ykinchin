@@ -1,7 +1,7 @@
-import { CSSProperties, FC, ReactNode } from 'react';
 import { Button } from 'antd';
+import { CSSProperties, ReactNode } from 'react';
 
-interface ButtonProps {
+type Props = {
     onClick: () => void;
     type: 'primary' | 'default' | 'dashed' | 'text' | 'link';
     size: 'large' | 'middle' | 'small';
@@ -14,9 +14,9 @@ interface ButtonProps {
     htmlType: 'button' | 'reset' | 'submit';
     block: boolean;
     test: string;
-}
+};
 
-const CustomButton: FC<Partial<ButtonProps>> = ({
+const CustomButton = ({
     test,
     onClick,
     type = 'text',
@@ -28,7 +28,7 @@ const CustomButton: FC<Partial<ButtonProps>> = ({
     style,
     htmlType,
     block,
-}) => {
+}: Partial<Props>) => {
     return (
         <Button
             block={block}

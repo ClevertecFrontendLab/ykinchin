@@ -1,5 +1,5 @@
 import { Space } from 'antd';
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
@@ -16,7 +16,7 @@ import NewFeedbackModal from './components/newFeedbackModal/NewFeedbackModal';
 
 import s from './feedbacks.module.scss';
 
-const Feedbacks: FC = () => {
+const Feedbacks = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const [showAllFeedback, setShowAllFeedback] = useState(false);
     const dispatch = useAppDispatch();

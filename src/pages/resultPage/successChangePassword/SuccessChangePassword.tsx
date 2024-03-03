@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 
-const SuccessChangePassword: FC = () => {
+const SuccessChangePassword = () => {
     const prevLocation = usePrevLocation();
 
     if (prevLocation !== PATHS.changePasswordError && prevLocation !== PATHS.changePassword) {

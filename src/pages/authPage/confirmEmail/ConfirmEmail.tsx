@@ -1,5 +1,5 @@
 import { Space, Typography } from 'antd';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 
@@ -12,7 +12,7 @@ import { confirmEmail } from '@redux/thunks/confirmEmail';
 
 import s from './confirmEmail.module.scss';
 
-const ConfirmEmail: FC = () => {
+const ConfirmEmail = () => {
     const location = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');

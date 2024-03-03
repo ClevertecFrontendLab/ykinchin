@@ -1,11 +1,10 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 
-const ErrorUserExist: FC = () => {
+const ErrorUserExist = () => {
     const prevLocation = usePrevLocation();
 
     if (prevLocation !== PATHS.registration) {

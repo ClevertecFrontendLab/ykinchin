@@ -1,5 +1,4 @@
 import { Menu, MenuProps, Typography } from 'antd';
-import { FC } from 'react';
 import { TMenuButton } from 'src/shared/types';
 
 import { CalendarTwoTone, HeartFilled, IdcardOutlined, TrophyFilled } from '@ant-design/icons';
@@ -18,11 +17,11 @@ const menuData: TMenuButton[] = [
     { key: 4, icon: <IdcardOutlined />, buttonText: 'Профиль' },
 ];
 
-interface SideMenuProps {
+type Props = {
     isOpened: boolean;
-}
+};
 
-const SideMenu: FC<SideMenuProps> = ({ isOpened }) => {
+const SideMenu = ({ isOpened }: Props) => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     const { Text } = Typography;

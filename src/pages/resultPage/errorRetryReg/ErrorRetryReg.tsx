@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import ResultCard from '@components/resultCard/ResultCard';
@@ -8,7 +7,7 @@ import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { registration } from '@redux/thunks/registerUser';
 
-const ErrorRetryReg: FC = () => {
+const ErrorRetryReg = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
     const { email, password } = useAppSelector((state) => state.user);

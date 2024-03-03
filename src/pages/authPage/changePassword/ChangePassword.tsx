@@ -1,5 +1,5 @@
 import { Card, Form, Space, Typography } from 'antd';
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import CustomButton from '@components/customButton/CustomButton';
@@ -13,7 +13,7 @@ import { changePassword } from '@redux/thunks/changePassword';
 
 import s from './changePassword.module.scss';
 
-const ChangePassword: FC = () => {
+const ChangePassword = () => {
     const location = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');

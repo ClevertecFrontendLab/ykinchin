@@ -1,11 +1,10 @@
-import { FC } from 'react';
 import Lottie from 'react-lottie';
 
 import animationData from './loader.json';
 
 import s from './loader.module.scss';
 
-const Loader: FC = () => {
+const Loader = () => {
     const defaultOptions = {
         loop: true,
         autoplay: true,

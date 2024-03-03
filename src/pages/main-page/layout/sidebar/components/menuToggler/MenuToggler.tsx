@@ -1,15 +1,13 @@
-import { FC } from 'react';
-
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 import s from './menuToggler.module.scss';
 
-interface TogglerProps {
+type Props = {
     setIsOpened: (isOpened: boolean) => void;
     isOpened: boolean;
-}
+};
 
-const MenuToggler: FC<TogglerProps> = ({ setIsOpened, isOpened }) => {
+const MenuToggler = ({ setIsOpened, isOpened }: Props) => {
     return (
         <div
             className={s.wrapper}

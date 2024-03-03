@@ -1,5 +1,5 @@
 import { Layout, Typography } from 'antd';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';
@@ -16,7 +16,7 @@ import SideMenu from './components/sideMenu/SideMenu';
 
 import s from './sidebar.module.scss';
 
-const Sidebar: FC = () => {
+const Sidebar = () => {
     const [isOpened, setIsOpened] = useState(false);
     const dispatch = useAppDispatch();
     const isBelowMediumScreen = useMediaQuery('(max-width:640px)');

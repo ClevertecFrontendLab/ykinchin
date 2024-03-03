@@ -1,11 +1,10 @@
 import { Modal } from 'antd';
-import { FC } from 'react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
 import s from './modalWindow.module.scss';
 
-type ModalProps = {
+type Props = {
     children: React.ReactNode;
     footer?: React.ReactNode;
     open: boolean;
@@ -14,14 +13,7 @@ type ModalProps = {
     onCancel?: () => void;
 };
 
-const ModalWindow: FC<ModalProps> = ({
-    children,
-    footer = '',
-    open,
-    title,
-    closable = false,
-    onCancel,
-}) => {
+const ModalWindow = ({ children, footer = '', open, title, closable = false, onCancel }: Props) => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     return (

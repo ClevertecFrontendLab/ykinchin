@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Card, Result } from 'antd';
 import { Navigate } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { checkEmail } from '@redux/thunks/checkEmail';
 
-const ErrorEmailCheck: FC = () => {
+const ErrorEmailCheck = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
     const { email } = useAppSelector((state) => state.user);

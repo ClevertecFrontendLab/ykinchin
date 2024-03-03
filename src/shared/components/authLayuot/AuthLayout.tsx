@@ -1,5 +1,4 @@
 import { Layout } from 'antd';
-import { FC } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 import Loader from '@components/loader/Loader';
@@ -11,7 +10,7 @@ import bg from '../../../assets/enter_page_light.png';
 
 import s from './authLayout.module.scss';
 
-const AuthLayout: FC = () => {
+const AuthLayout = () => {
     const { Content } = Layout;
     const showLoader = useAppSelector((state) => state.loader.showLoader);
     const isAuth = useAuth();

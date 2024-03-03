@@ -1,5 +1,4 @@
 import { Tabs } from 'antd';
-import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import IconWrapper from '@components/icons/IconWrapper';
@@ -12,7 +11,7 @@ import SignUpPage from './signUp/SignUpPage';
 
 import s from './authPage.module.scss';
 
-const AuthPage: FC = () => {
+const AuthPage = () => {
     const location = useLocation();
 
     return (

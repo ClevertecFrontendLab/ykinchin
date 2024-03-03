@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
 import { Card, Result } from 'antd';
 import { ResultStatusType } from 'antd/lib/result';
+import React from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 
-interface ResultCardProps {
+type Props = {
     resultImg: React.ReactNode;
     resultTitle: React.ReactNode;
     resultDescription: React.ReactNode;
@@ -15,9 +15,9 @@ interface ResultCardProps {
     bodyStyle: React.CSSProperties;
     resultStyle: React.CSSProperties;
     test: string;
-}
+};
 
-const ResultCard: FC<Partial<ResultCardProps>> = ({
+const ResultCard = ({
     resultTitle,
     resultDescription,
     btnText,
@@ -27,7 +27,7 @@ const ResultCard: FC<Partial<ResultCardProps>> = ({
     bodyStyle = { padding: 0 },
     test,
     resultStyle,
-}) => {
+}: Partial<Props>) => {
     return (
         <Card bordered={false} bodyStyle={bodyStyle}>
             <Result

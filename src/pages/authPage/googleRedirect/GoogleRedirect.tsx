@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '@constants/PATHS';
@@ -6,7 +6,7 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import { history } from '@redux/configure-store';
 import { setAuth } from '@redux/slices/authSlice';
 
-const GoogleRedirect: FC = () => {
+const GoogleRedirect = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 

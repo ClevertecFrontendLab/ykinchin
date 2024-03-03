@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import ResultCard from '@components/resultCard/ResultCard';
@@ -7,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
 
-const ErrorChangePassword: FC = () => {
+const ErrorChangePassword = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
     const password = useAppSelector((state) => state.user.password as string);

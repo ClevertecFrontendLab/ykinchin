@@ -1,5 +1,5 @@
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
-import React, { FC } from 'react';
+import React from 'react';
 import { IContentCard } from 'src/shared/types';
 
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
@@ -31,7 +31,7 @@ const cardData: IContentCard[] = [
     { title: 'Заполнить профиль', icon: <IdcardOutlined />, buttonText: 'Профиль' },
 ];
 
-const Content: FC = () => {
+const Content = () => {
     const isAboveMediumScreen = useMediaQuery('(min-width:835px)');
     const isMobile = useMediaQuery('(max-width:425px)');
 

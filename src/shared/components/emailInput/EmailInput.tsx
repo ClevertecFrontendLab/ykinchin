@@ -1,7 +1,7 @@
-import { ChangeEvent, FC } from 'react';
 import { Form, Input } from 'antd';
+import { ChangeEvent } from 'react';
 
-interface EmailInputProps {
+interface Props {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     onBlur?: (e: any) => Promise<void>;
     value?: string;
@@ -10,7 +10,7 @@ interface EmailInputProps {
     test: string;
 }
 
-const EmailInput: FC<EmailInputProps> = ({ onChange, onBlur, style, className, test }) => {
+const EmailInput = ({ onChange, onBlur, style, className, test }: Props) => {
     return (
         <Form.Item
             className={className}

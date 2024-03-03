@@ -1,5 +1,4 @@
 import { Layout } from 'antd';
-import { FC } from 'react';
 import { Navigate, Outlet } from 'react-router';
 
 import HeaderBreadcrumbs from '@components/breadcrumbs/HeaderBreadcrumbs';
@@ -13,7 +12,7 @@ import bg from '../../../assets/main_page_light.png';
 
 import s from './mainLayout.module.scss';
 
-const MainLayout: FC = () => {
+const MainLayout = () => {
     const isAuth = useAuth();
     const showLoader = useAppSelector((state) => state.loader.showLoader);
 

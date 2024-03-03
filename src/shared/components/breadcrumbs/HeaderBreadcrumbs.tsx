@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Breadcrumb } from 'antd';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -10,11 +9,11 @@ type NavList = {
     breadcrumbName: string;
 };
 
-type HeaderBreadcrumbsProps = {
+type Props = {
     className?: string;
 };
 
-const HeaderBreadcrumbs: FC<HeaderBreadcrumbsProps> = ({ className }) => {
+const HeaderBreadcrumbs = ({ className }: Props) => {
     const location = useLocation();
     const currentLocation = location.pathname;
 

@@ -1,21 +1,15 @@
-import { FC } from 'react';
 import { Rate } from 'antd';
 
 import { StarFilled, StarOutlined } from '@ant-design/icons';
 
-type RateProps = {
+type Props = {
     rating: number;
     disabled: boolean;
     fontsize?: number;
     onChange?: (value: number) => void;
 };
 
-const CustomRate: FC<Partial<RateProps>> = ({
-    rating = 0,
-    disabled = true,
-    fontsize = 14,
-    onChange,
-}) => {
+const CustomRate = ({ rating = 0, disabled = true, fontsize = 14, onChange }: Partial<Props>) => {
     return (
         <Rate
             disabled={disabled}

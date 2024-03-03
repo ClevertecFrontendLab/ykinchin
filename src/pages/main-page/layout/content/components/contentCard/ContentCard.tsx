@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { IContentCard } from 'src/shared/types';
 
 import CustomButton from '@components/customButton/CustomButton';
@@ -6,11 +5,11 @@ import CustomCard from '@components/customCard/CustomCard';
 
 import s from './contentCard.module.scss';
 
-interface IContentCardProps {
+type Props = {
     data: IContentCard;
-}
+};
 
-const ContentCard: FC<IContentCardProps> = ({ data }) => {
+const ContentCard = ({ data }: Props) => {
     return (
         <CustomCard
             title={data.title}

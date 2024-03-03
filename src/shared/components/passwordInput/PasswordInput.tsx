@@ -1,25 +1,25 @@
-import { ChangeEvent, FC } from 'react';
 import { Form, Input } from 'antd';
+import { ChangeEvent } from 'react';
 
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
-interface PasswordInputProps {
+type Props = {
     value?: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     itemStyle?: React.CSSProperties;
     withHelp?: boolean;
     placeholder?: string;
     test?: string;
-}
+};
 
-const PasswordInput: FC<PasswordInputProps> = ({
+const PasswordInput = ({
     value,
     onChange,
     itemStyle,
     withHelp = true,
     placeholder = 'Пароль',
     test,
-}) => {
+}: Props) => {
     return (
         <Form.Item
             name='password'
