@@ -1,10 +1,8 @@
-import { GooglePlusOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Col, Form, Row, Space } from 'antd';
 import { RuleObject } from 'antd/lib/form';
 import { ChangeEvent, FC, useEffect, useState } from 'react';
 
-import styles from './signInPage.module.scss';
-
+import { GooglePlusOutlined } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
 import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
@@ -13,6 +11,8 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import { setUser } from '@redux/slices/userSlice';
 import { checkEmail } from '@redux/thunks/checkEmail';
 import { login } from '@redux/thunks/loginUser';
+
+import s from './signInPage.module.scss';
 
 const SignInPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -48,7 +48,7 @@ const SignInPage: FC = () => {
 
     const onFinishHandler = async () => {
         try {
-            const values = await form.validateFields();
+            await form.validateFields();
             await dispatch(
                 login({
                     rememberCheck: isRememberChecked,
@@ -83,7 +83,7 @@ const SignInPage: FC = () => {
             autoComplete='off'
             size='large'
             style={{ margin: '10px 0 110px' }}
-            className={styles.form}
+            className={s.form}
             onFinish={onFinishHandler}
         >
             <Space direction='vertical' size={0}>
@@ -120,7 +120,7 @@ const SignInPage: FC = () => {
                     <CustomButton
                         type='link'
                         style={{ padding: 0 }}
-                        className={styles.resetPassBtn}
+                        className={s.resetPassBtn}
                         disabled={!isEmailValid && true}
                         onClick={onPasswordReset}
                         test='login-forgot-button'
@@ -135,7 +135,7 @@ const SignInPage: FC = () => {
                         htmlType='submit'
                         size='large'
                         type='primary'
-                        className={`${styles.submitBtn} ${styles.btn}`}
+                        className={`${s.submitBtn} ${s.btn}`}
                         data-test-id='login-submit-button'
                     >
                         Войти
@@ -146,7 +146,7 @@ const SignInPage: FC = () => {
                         icon={<GooglePlusOutlined />}
                         size='large'
                         type='default'
-                        className={styles.btn}
+                        className={s.btn}
                         onClick={onGoogleAuthHandler}
                     >
                         Войти через Google

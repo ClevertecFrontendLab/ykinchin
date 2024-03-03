@@ -1,13 +1,13 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { push, replace } from 'redux-first-history';
+import { IFeedback } from 'src/shared/types/feedbackType';
 
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { RootState } from '@redux/configure-store';
 import { logout } from '@redux/slices/authSlice';
 import { setIsLoading } from '@redux/slices/loaderSlice';
-import { IFeedback } from 'src/shared/types/feedbackType';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getFeedbacks = createAsyncThunk<IFeedback[], void>(
     'getFeedbacks',

@@ -1,9 +1,11 @@
+import { Space } from 'antd';
+import { FC, useEffect, useState } from 'react';
+
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
-import { Space } from 'antd';
-import { FC, useEffect, useState } from 'react';
+
 import EmptyPage from './components/emptyPage/EmptyPage';
 import FeedbackList from './components/feedbackList/FeedbackList';
 import ModalError from './components/modalError/ModalError';
@@ -11,7 +13,8 @@ import ModalErrorPost from './components/modalErrorPost/ModalErrorPost';
 import ModalSuccessPost from './components/modalSuccessPost/ModalSuccessPost';
 import NewFeedbackBtn from './components/newFeedbackBtn/NewFeedbackBtn';
 import NewFeedbackModal from './components/newFeedbackModal/NewFeedbackModal';
-import styles from './feedbacks.module.scss';
+
+import s from './feedbacks.module.scss';
 
 const Feedbacks: FC = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
@@ -26,11 +29,7 @@ const Feedbacks: FC = () => {
     return (
         <div style={{ height: '100%' }}>
             {feedbacks && feedbacks.length > 0 ? (
-                <div
-                    className={` ${styles.wrapper} ${
-                        showAllFeedback ? styles.listFull : styles.listShort
-                    }`}
-                >
+                <div className={` ${s.wrapper} ${showAllFeedback ? s.listFull : s.listShort}`}>
                     <FeedbackList feedbacks={feedbacks} showAllFeedback={showAllFeedback} />
                     <Space direction={isMobile ? 'vertical' : 'horizontal'}>
                         <NewFeedbackBtn />

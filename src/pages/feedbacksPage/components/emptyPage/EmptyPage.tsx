@@ -1,16 +1,19 @@
-import useMediaQuery from '@hooks/useMediaQuery';
 import { Card, Space, Typography } from 'antd';
 import { FC } from 'react';
+
+import useMediaQuery from '@hooks/useMediaQuery';
+
 import NewFeedbackBtn from '../newFeedbackBtn/NewFeedbackBtn';
-import styles from './emptyPage.module.scss';
+
+import s from './emptyPage.module.scss';
 
 const EmptyPage: FC = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     return (
-        <div className={styles.wrapper}>
+        <div className={s.wrapper}>
             <Card
-                className={styles.card}
+                className={s.card}
                 bodyStyle={{
                     padding: isMobile ? 0 : '18px 0',
                     textAlign: 'center',

@@ -1,14 +1,14 @@
-import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 import { Col, Row, Typography } from 'antd';
 import { FC } from 'react';
 
-import styles from './BottomContent.module.scss';
-
+import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
 import CustomCard from '@components/customCard/CustomCard';
 import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
+
+import s from './BottomContent.module.scss';
 
 const BottomContent: FC = () => {
     const dispatch = useAppDispatch();
@@ -21,7 +21,7 @@ const BottomContent: FC = () => {
     };
 
     return (
-        <Row gutter={[0, 24]} className={styles.wrapper} justify='space-between' align='bottom'>
+        <Row gutter={[0, 24]} className={s.wrapper} justify='space-between' align='bottom'>
             <Col
                 xs={{ order: 2 }}
                 md={{ order: 1 }}
@@ -33,7 +33,7 @@ const BottomContent: FC = () => {
             >
                 <CustomButton
                     size='large'
-                    className={styles.reviewButton}
+                    className={s.reviewButton}
                     onClick={onFeedbackHandler}
                     test='see-reviews'
                 >
@@ -58,7 +58,7 @@ const BottomContent: FC = () => {
                                 gap: 1,
                             }}
                         >
-                            <Title className={styles.downloadTitle}>Скачать на телефон</Title>
+                            <Title className={s.downloadTitle}>Скачать на телефон</Title>
                             <Text style={{ fontSize: 14 }} type='secondary'>
                                 Доступтно в PRO-тарифе
                             </Text>
@@ -67,15 +67,15 @@ const BottomContent: FC = () => {
                 >
                     <Row
                         justify={{ xs: 'space-around', md: 'space-between' }}
-                        className={styles.devices}
+                        className={s.devices}
                     >
                         <Col>
-                            <CustomButton className={styles.deviceBtn} icon={<AndroidFilled />}>
+                            <CustomButton className={s.deviceBtn} icon={<AndroidFilled />}>
                                 Android OS
                             </CustomButton>
                         </Col>
                         <Col>
-                            <CustomButton className={styles.deviceBtn} icon={<AppleFilled />}>
+                            <CustomButton className={s.deviceBtn} icon={<AppleFilled />}>
                                 Apple iOS
                             </CustomButton>
                         </Col>

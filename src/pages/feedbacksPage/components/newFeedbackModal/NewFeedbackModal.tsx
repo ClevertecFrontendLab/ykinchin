@@ -1,3 +1,6 @@
+import { FC, useState } from 'react';
+import { Form, Input, Space } from 'antd';
+
 import CustomButton from '@components/customButton/CustomButton';
 import CustomRate from '@components/customRate/CustomRate';
 import ModalWindow from '@components/modal/ModalWindow';
@@ -5,8 +8,6 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { toggleNewFeedback } from '@redux/slices/feedbackSlice';
 import { postFeedback } from '@redux/thunks/postFeedback';
-import { Form, Input, Space } from 'antd';
-import { FC, useState } from 'react';
 
 type Feedback = {
     message: string;

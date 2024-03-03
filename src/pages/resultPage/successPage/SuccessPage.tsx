@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
+
 import ResultCard from '../../../shared/components/resultCard/ResultCard';
 
 const SuccessPage: FC = () => {

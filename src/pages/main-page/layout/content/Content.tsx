@@ -1,13 +1,14 @@
-import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
 import React, { FC } from 'react';
-
-import styles from './content.module.scss';
-
-import useMediaQuery from '@hooks/useMediaQuery';
 import { IContentCard } from 'src/shared/types';
+
+import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import useMediaQuery from '@hooks/useMediaQuery';
+
 import BottomContent from './components/bottomContent/BottomContent';
 import ContentCard from './components/contentCard/ContentCard';
+
+import s from './content.module.scss';
 
 const listData: string[] = [
     'планировать свои тренировки на каледаре, выбирая тип и уровень нагрузки;',
@@ -36,8 +37,8 @@ const Content: FC = () => {
 
     const { Content } = Layout;
     return (
-        <Content className={styles.content}>
-            <div className={styles.wrapper}>
+        <Content className={s.content}>
+            <div className={s.wrapper}>
                 <Row gutter={[16, 16]}>
                     <Col>
                         <Row gutter={[16, 24]}>
@@ -46,14 +47,14 @@ const Content: FC = () => {
                                     style={{ height: `${isMobile && '368px'} ` }}
                                     bodyStyle={{ padding: `${isMobile && '16px'}` }}
                                     bordered={false}
-                                    className={styles.card}
+                                    className={s.card}
                                 >
                                     <List
                                         header={<div>С CleverFit ты сможешь:</div>}
-                                        className={styles.list}
+                                        className={s.list}
                                         dataSource={listData}
                                         renderItem={(item) => (
-                                            <List.Item className={styles.listItem}>
+                                            <List.Item className={s.listItem}>
                                                 <Typography.Text
                                                     style={{ maxWidth: `${isMobile && '275px'}` }}
                                                 >
@@ -78,7 +79,7 @@ const Content: FC = () => {
                             </Col>
                             <Col span={24}>
                                 <Card
-                                    className={styles.card}
+                                    className={s.card}
                                     bordered={false}
                                     bodyStyle={{ padding: `${isMobile && '16px'}` }}
                                 >

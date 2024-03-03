@@ -1,5 +1,5 @@
-import { Button } from 'antd';
 import { CSSProperties, FC, ReactNode } from 'react';
+import { Button } from 'antd';
 
 interface ButtonProps {
     onClick: () => void;

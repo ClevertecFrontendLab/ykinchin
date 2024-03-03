@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
-import { Navigate } from 'react-router-dom';
 
 const ErrorChangePassword: FC = () => {
     const prevLocation = usePrevLocation();

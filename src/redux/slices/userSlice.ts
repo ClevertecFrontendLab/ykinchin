@@ -1,6 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-
 import { confirmEmail } from '@redux/thunks/confirmEmail';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
 
 export interface userState {
     email: string;

@@ -1,4 +1,25 @@
 module.exports = {
+    overrides: [
+        {
+            files: ['*.ts', '*.tsx'],
+            rules: {
+                'simple-import-sort/imports': [
+                    'error',
+                    {
+                        groups: [
+                            ['^react$', '^next', '^[a-z]'],
+                            ['^@'],
+                            ['^~'],
+                            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+                            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+                            ['^.+\\.s?css$'],
+                            ['^\\u0000'],
+                        ],
+                    },
+                ],
+            },
+        },
+    ],
     root: true,
     env: { browser: true, es2020: true },
     extends: [

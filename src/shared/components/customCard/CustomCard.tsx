@@ -1,5 +1,5 @@
-import { Card } from 'antd';
 import { CSSProperties, FC, ReactNode } from 'react';
+import { Card } from 'antd';
 
 interface CardProps {
     children: ReactNode;

@@ -1,9 +1,9 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 import { REQUEST_URL } from '@constants/requestUrl';
 import { RootState } from '@redux/configure-store';
 import { setIsLoading } from '@redux/slices/loaderSlice';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 type Feedback = {
     message: string;

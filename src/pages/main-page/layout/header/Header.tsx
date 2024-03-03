@@ -1,11 +1,11 @@
-import { SettingOutlined } from '@ant-design/icons';
 import { Layout, PageHeader } from 'antd';
 import { FC } from 'react';
 
-import styles from './header.module.scss';
-
+import { SettingOutlined } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
 import useMediaQuery from '@hooks/useMediaQuery';
+
+import s from './header.module.scss';
 
 const Header: FC = () => {
     const isBelowMediumScreen = useMediaQuery('(min-width:834px)');
@@ -29,7 +29,7 @@ const Header: FC = () => {
           };
 
     return (
-        <Header className={styles.header}>
+        <Header className={s.header}>
             <PageHeader
                 title={
                     isMobile ? (

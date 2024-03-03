@@ -1,5 +1,5 @@
-import { Form, Input } from 'antd';
 import { ChangeEvent, FC } from 'react';
+import { Form, Input } from 'antd';
 
 interface EmailInputProps {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;

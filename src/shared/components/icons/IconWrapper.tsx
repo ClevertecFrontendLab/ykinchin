@@ -1,5 +1,6 @@
-import Icon, { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 import { ComponentType, FC } from 'react';
+
+import Icon, { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 
 interface IconProps extends Partial<CustomIconComponentProps> {
     icon: ComponentType<CustomIconComponentProps | React.SVGProps<SVGSVGElement>>;

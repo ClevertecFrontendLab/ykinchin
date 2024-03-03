@@ -1,10 +1,10 @@
 import { FC } from 'react';
-
-import styles from './contentCard.module.scss';
+import { IContentCard } from 'src/shared/types';
 
 import CustomButton from '@components/customButton/CustomButton';
 import CustomCard from '@components/customCard/CustomCard';
-import { IContentCard } from 'src/shared/types';
+
+import s from './contentCard.module.scss';
 
 interface IContentCardProps {
     data: IContentCard;
@@ -23,7 +23,7 @@ const ContentCard: FC<IContentCardProps> = ({ data }) => {
                 fontSize: 16,
             }}
             bodyStyle={{ padding: 0 }}
-            className={styles.card}
+            className={s.card}
         >
             <CustomButton icon={data.icon}>{data.buttonText}</CustomButton>
         </CustomCard>

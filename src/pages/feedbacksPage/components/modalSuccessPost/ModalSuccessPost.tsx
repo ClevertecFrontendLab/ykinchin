@@ -1,9 +1,10 @@
+import { FC } from 'react';
+
 import ModalWindow from '@components/modal/ModalWindow';
 import ResultCard from '@components/resultCard/ResultCard';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { toggleSuccessModal } from '@redux/slices/feedbackSlice';
-import { FC } from 'react';
 
 const ModalSuccessPost: FC = () => {
     const isMobile = useMediaQuery('(max-width:425px)');

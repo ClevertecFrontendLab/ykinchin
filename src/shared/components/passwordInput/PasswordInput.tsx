@@ -1,6 +1,7 @@
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Form, Input } from 'antd';
 import { ChangeEvent, FC } from 'react';
+import { Form, Input } from 'antd';
+
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
 interface PasswordInputProps {
     value?: string;

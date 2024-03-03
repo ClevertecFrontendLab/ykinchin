@@ -1,5 +1,5 @@
-import { Card, Result } from 'antd';
 import { FC } from 'react';
+import { Card, Result } from 'antd';
 import { Navigate } from 'react-router-dom';
 
 import CustomButton from '@components/customButton/CustomButton';

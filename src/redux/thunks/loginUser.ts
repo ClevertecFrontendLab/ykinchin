@@ -1,4 +1,3 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { replace } from 'redux-first-history';
 
@@ -6,6 +5,7 @@ import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { setAuth } from '@redux/slices/authSlice';
 import { setIsLoading } from '@redux/slices/loaderSlice';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface ILoginData {
     email: string;

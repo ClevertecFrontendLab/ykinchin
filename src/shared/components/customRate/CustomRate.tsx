@@ -1,6 +1,7 @@
-import { StarFilled, StarOutlined } from '@ant-design/icons';
-import { Rate } from 'antd';
 import { FC } from 'react';
+import { Rate } from 'antd';
+
+import { StarFilled, StarOutlined } from '@ant-design/icons';
 
 type RateProps = {
     rating: number;

@@ -1,6 +1,7 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { createBrowserHistory } from 'history';
 import { createReduxHistoryContext } from 'redux-first-history';
+
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import authReducer from './slices/authSlice';
 import feedbackSlice from './slices/feedbackSlice';

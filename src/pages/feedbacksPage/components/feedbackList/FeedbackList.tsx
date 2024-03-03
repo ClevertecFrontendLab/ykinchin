@@ -1,6 +1,7 @@
-import { List } from 'antd';
 import { FC } from 'react';
+import { List } from 'antd';
 import { IFeedback } from 'src/shared/types/feedbackType';
+
 import FeedbackItem from '../feedbackItem/FeedbackItem';
 
 type FeedbackListProps = {

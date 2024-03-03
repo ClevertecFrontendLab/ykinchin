@@ -1,27 +1,28 @@
 import { Tabs } from 'antd';
 import { FC } from 'react';
-
-import styles from './authPage.module.scss';
+import { useLocation } from 'react-router-dom';
 
 import IconWrapper from '@components/icons/IconWrapper';
 import FullLogo from '@components/icons/svgs/FullLogo';
 import { PATHS } from '@constants/PATHS';
 import { history } from '@redux/configure-store';
-import { useLocation } from 'react-router-dom';
+
 import SignInPage from './signIn/SignInPage';
 import SignUpPage from './signUp/SignUpPage';
+
+import s from './authPage.module.scss';
 
 const AuthPage: FC = () => {
     const location = useLocation();
 
     return (
-        <div className={styles.formWrapper}>
-            <div className={styles.formWithLogo}>
-                <IconWrapper icon={FullLogo} className={styles.logo} />
-                <div className={styles.formTabs}>
+        <div className={s.formWrapper}>
+            <div className={s.formWithLogo}>
+                <IconWrapper icon={FullLogo} className={s.logo} />
+                <div className={s.formTabs}>
                     <Tabs
                         defaultActiveKey={location?.pathname}
-                        className={styles.tabs}
+                        className={s.tabs}
                         onChange={(key) => history.push(key)}
                     >
                         <Tabs.TabPane tab='Вход' key={PATHS.auth}>

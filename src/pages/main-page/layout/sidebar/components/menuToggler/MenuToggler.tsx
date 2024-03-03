@@ -1,7 +1,8 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { FC } from 'react';
 
-import styles from './menuToggler.module.scss';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+
+import s from './menuToggler.module.scss';
 
 interface TogglerProps {
     setIsOpened: (isOpened: boolean) => void;
@@ -11,11 +12,11 @@ interface TogglerProps {
 const MenuToggler: FC<TogglerProps> = ({ setIsOpened, isOpened }) => {
     return (
         <div
-            className={styles.wrapper}
+            className={s.wrapper}
             onClick={() => setIsOpened(!isOpened)}
             data-test-id='sider-switch'
         >
-            <div className={styles.figure} data-test-id='sider-switch-mobile'>
+            <div className={s.figure} data-test-id='sider-switch-mobile'>
                 {isOpened ? (
                     <MenuFoldOutlined style={{ transform: 'rotate(-90deg)', color: '#8C8C8C' }} />
                 ) : (

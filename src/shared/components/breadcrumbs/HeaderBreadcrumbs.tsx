@@ -1,8 +1,9 @@
-import { PATHS } from '@constants/PATHS';
-import { Breadcrumb } from 'antd';
 import { FC } from 'react';
+import { Breadcrumb } from 'antd';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+
+import { PATHS } from '@constants/PATHS';
 
 type NavList = {
     path: string;

@@ -1,6 +1,6 @@
+import React, { FC } from 'react';
 import { Card, Result } from 'antd';
 import { ResultStatusType } from 'antd/lib/result';
-import React, { FC } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 

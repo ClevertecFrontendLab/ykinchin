@@ -3,14 +3,14 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 
-import styles from './confirmEmail.module.scss';
-
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
+
+import s from './confirmEmail.module.scss';
 
 const ConfirmEmail: FC = () => {
     const location = useLocation();
@@ -52,7 +52,7 @@ const ConfirmEmail: FC = () => {
             bodyStyle={{ padding: 0 }}
             status={isError ? 'error' : 'info'}
             resultTitle={
-                <Typography.Title level={3} className={styles.title} style={{ margin: 0 }}>
+                <Typography.Title level={3} className={s.title} style={{ margin: 0 }}>
                     {isError && 'Неверный код.'} Введите код для восстановления аккаунта
                 </Typography.Title>
             }
@@ -64,7 +64,7 @@ const ConfirmEmail: FC = () => {
                 </>
             }
         >
-            <Space direction='vertical' size='large' align='center' className={styles.wrapper}>
+            <Space direction='vertical' size='large' align='center' className={s.wrapper}>
                 <VerificationInput
                     onComplete={onCompleteHandler}
                     onChange={handleVerificationInputChange}
@@ -76,8 +76,8 @@ const ConfirmEmail: FC = () => {
                         onPaste: onPasteHandler,
                     }}
                     classNames={{
-                        container: `${styles.container}`,
-                        character: `${styles.character} ${isError && styles.characterError}`,
+                        container: `${s.container}`,
+                        character: `${s.character} ${isError && s.characterError}`,
                         characterInactive: 'character--inactive',
                     }}
                 />

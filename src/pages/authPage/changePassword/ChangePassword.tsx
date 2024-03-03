@@ -2,8 +2,6 @@ import { Card, Form, Space, Typography } from 'antd';
 import { ChangeEvent, FC, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import styles from './changePassword.module.scss';
-
 import CustomButton from '@components/customButton/CustomButton';
 import PasswordInput from '@components/passwordInput/PasswordInput';
 import RepeatPasswordInput from '@components/repeatPasswordInput/RepeatPasswordInput';
@@ -12,6 +10,8 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
+
+import s from './changePassword.module.scss';
 
 const ChangePassword: FC = () => {
     const location = useLocation();
@@ -38,13 +38,13 @@ const ChangePassword: FC = () => {
     }
 
     return (
-        <Card bodyStyle={{ padding: 0 }} bordered={false} className={styles.card}>
+        <Card bodyStyle={{ padding: 0 }} bordered={false} className={s.card}>
             <Form
                 onFinish={onFinishHandler}
                 size='large'
                 wrapperCol={{ span: 24 }}
                 autoComplete='off'
-                className={styles.form}
+                className={s.form}
             >
                 <Typography.Title level={3}>Восстановление аккаунта</Typography.Title>
                 <Space direction='vertical' size={isMobile ? 8 : 'large'}>
@@ -64,7 +64,7 @@ const ChangePassword: FC = () => {
                         htmlType='submit'
                         size='large'
                         type='primary'
-                        className={styles.btn}
+                        className={s.btn}
                         test='change-submit-button'
                     >
                         Сохранить

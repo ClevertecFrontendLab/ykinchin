@@ -1,5 +1,5 @@
-import { Divider } from 'antd';
 import { FC } from 'react';
+import { Divider } from 'antd';
 
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';

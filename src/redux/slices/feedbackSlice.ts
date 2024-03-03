@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IFeedback } from 'src/shared/types/feedbackType';
 
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 import { postFeedback } from '@redux/thunks/postFeedback';
-import { IFeedback } from 'src/shared/types/feedbackType';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export type feedbackState = {
     isErrorModalOpened: boolean;

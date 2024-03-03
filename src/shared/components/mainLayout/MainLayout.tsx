@@ -1,14 +1,17 @@
+import { Layout } from 'antd';
+import { FC } from 'react';
+import { Navigate, Outlet } from 'react-router';
+
 import HeaderBreadcrumbs from '@components/breadcrumbs/HeaderBreadcrumbs';
 import Loader from '@components/loader/Loader';
 import { PATHS } from '@constants/PATHS';
 import { useAppSelector } from '@hooks/reduxHooks';
 import useAuth from '@hooks/useAuth';
 import Sidebar from '@pages/main-page/layout/sidebar/Sidebar';
-import { Layout } from 'antd';
-import { FC } from 'react';
-import { Navigate, Outlet } from 'react-router';
+
 import bg from '../../../assets/main_page_light.png';
-import styles from './mainLayout.module.scss';
+
+import s from './mainLayout.module.scss';
 
 const MainLayout: FC = () => {
     const isAuth = useAuth();
@@ -16,7 +19,7 @@ const MainLayout: FC = () => {
 
     return isAuth ? (
         <Layout
-            className={styles.layout}
+            className={s.layout}
             style={{
                 minHeight: '100vh',
                 background: `no-repeat center bottom url(${bg})`,
@@ -26,7 +29,7 @@ const MainLayout: FC = () => {
             <Sidebar />
             <div style={{ width: '100%' }}>
                 <Layout style={{ background: 0, height: '100%' }}>
-                    <HeaderBreadcrumbs className={styles.breadCrumbs} />
+                    <HeaderBreadcrumbs className={s.breadCrumbs} />
                     <Outlet />
                 </Layout>
             </div>

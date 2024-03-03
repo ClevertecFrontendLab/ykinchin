@@ -1,8 +1,6 @@
 import { Layout, Typography } from 'antd';
 import { FC, useState } from 'react';
 
-import styles from './sidebar.module.scss';
-
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';
 import FullLogo from '@components/icons/svgs/FullLogo';
@@ -12,8 +10,11 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { history } from '@redux/configure-store';
 import { logout } from '@redux/slices/authSlice';
+
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';
+
+import s from './sidebar.module.scss';
 
 const Sidebar: FC = () => {
     const [isOpened, setIsOpened] = useState(false);
@@ -39,11 +40,11 @@ const Sidebar: FC = () => {
 
     return (
         <Sider width={sideBarWidth} style={{ minHeight: '100%' }}>
-            <div className={styles.wrapper}>
-                <div className={styles.topMenu}>
+            <div className={s.wrapper}>
+                <div className={s.topMenu}>
                     <IconWrapper
                         icon={isOpened ? FullLogo : ShortLogo}
-                        className={isOpened ? styles.logo : styles.logoCollapsed}
+                        className={isOpened ? s.logo : s.logoCollapsed}
                     />
                     <SideMenu isOpened={isOpened} />
                 </div>
