@@ -29,7 +29,7 @@ const Feedbacks = () => {
 
     return (
         <div style={{ height: '100%' }}>
-            {feedbacks && feedbacks.length < 0 ? (
+            {feedbacks && feedbacks.length > 0 ? (
                 <div
                     className={` ${styles.wrapper} ${
                         showAllFeedback ? styles.listFull : styles.listShort

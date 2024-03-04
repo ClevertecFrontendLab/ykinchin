@@ -1,9 +1,9 @@
-import { ChangeEvent } from 'react';
 import { Form, Input } from 'antd';
+import { ChangeEvent, FocusEventHandler } from 'react';
 
 interface Props {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    onBlur?: (e: any) => Promise<void>;
+    onBlur?: FocusEventHandler<HTMLInputElement>;
     value?: string;
     style?: React.CSSProperties;
     className?: string;

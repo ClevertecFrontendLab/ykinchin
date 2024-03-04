@@ -1,6 +1,6 @@
-import { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Checkbox, Col, Form, Row, Space } from 'antd';
 import { RuleObject } from 'antd/lib/form';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import { GooglePlusOutlined } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
@@ -12,7 +12,7 @@ import { checkEmail } from '@redux/thunks/checkEmail';
 import { login } from '@redux/thunks/loginUser';
 import { setUser } from '@redux/userSlice/userSlice';
 
-import s from './signInPage.module.scss';
+import styles from './signInPage.module.scss';
 
 const SignInPage = () => {
     const dispatch = useAppDispatch();
@@ -83,7 +83,7 @@ const SignInPage = () => {
             autoComplete='off'
             size='large'
             style={{ margin: '10px 0 110px' }}
-            className={s.form}
+            className={styles.form}
             onFinish={onFinishHandler}
         >
             <Space direction='vertical' size={0}>
@@ -120,7 +120,7 @@ const SignInPage = () => {
                     <CustomButton
                         type='link'
                         style={{ padding: 0 }}
-                        className={s.resetPassBtn}
+                        className={styles.resetPassBtn}
                         disabled={!isEmailValid && true}
                         onClick={onPasswordReset}
                         test='login-forgot-button'
@@ -135,7 +135,7 @@ const SignInPage = () => {
                         htmlType='submit'
                         size='large'
                         type='primary'
-                        className={`${s.submitBtn} ${s.btn}`}
+                        className={`${styles.submitBtn} ${styles.btn}`}
                         data-test-id='login-submit-button'
                     >
                         Войти
@@ -146,7 +146,7 @@ const SignInPage = () => {
                         icon={<GooglePlusOutlined />}
                         size='large'
                         type='default'
-                        className={s.btn}
+                        className={styles.btn}
                         onClick={onGoogleAuthHandler}
                     >
                         Войти через Google
