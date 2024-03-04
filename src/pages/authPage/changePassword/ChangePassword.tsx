@@ -1,5 +1,5 @@
-import { Card, Form, Space, Typography } from 'antd';
 import { ChangeEvent, useState } from 'react';
+import { Card, Form, Space, Typography } from 'antd';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import CustomButton from '@components/customButton/CustomButton';

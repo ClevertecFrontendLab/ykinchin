@@ -1,5 +1,5 @@
-import { Form, Input } from 'antd';
 import { ChangeEvent, FocusEventHandler } from 'react';
+import { Form, Input } from 'antd';
 
 interface Props {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;

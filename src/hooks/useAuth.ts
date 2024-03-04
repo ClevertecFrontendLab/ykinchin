@@ -1,5 +1,7 @@
-import { selectIsAuth } from '@redux/authSlice/selectors';
 import { useEffect, useState } from 'react';
+
+import { selectIsAuth } from '@redux/authSlice/selectors';
+
 import { useAppSelector } from './reduxHooks';
 
 const useAuth = () => {

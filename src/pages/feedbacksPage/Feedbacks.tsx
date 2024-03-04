@@ -1,9 +1,10 @@
-import { Space } from 'antd';
 import { useEffect, useState } from 'react';
+import { Space } from 'antd';
 
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
+import { selectFeedbacks } from '@redux/feedbackSlice/selectors';
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 
 import EmptyPage from './components/emptyPage/EmptyPage';
@@ -14,7 +15,6 @@ import ModalSuccessPost from './components/modalSuccessPost/ModalSuccessPost';
 import NewFeedbackBtn from './components/newFeedbackBtn/NewFeedbackBtn';
 import NewFeedbackModal from './components/newFeedbackModal/NewFeedbackModal';
 
-import { selectFeedbacks } from '@redux/feedbackSlice/selectors';
 import styles from './feedbacks.module.scss';
 
 const Feedbacks = () => {

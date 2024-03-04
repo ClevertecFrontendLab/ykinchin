@@ -1,6 +1,6 @@
+import { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Checkbox, Col, Form, Row, Space } from 'antd';
 import { RuleObject } from 'antd/lib/form';
-import { ChangeEvent, useEffect, useState } from 'react';
 
 import { GooglePlusOutlined } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';

@@ -3,12 +3,12 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import Loader from '@components/loader/Loader';
 import { PATHS } from '@constants/PATHS';
+import { useAppSelector } from '@hooks/reduxHooks';
 import useAuth from '@hooks/useAuth';
+import { selectShowLoader } from '@redux/loaderSlice/selectors';
 
 import bg from '../../../assets/enter_page_light.png';
 
-import { useAppSelector } from '@hooks/reduxHooks';
-import { selectShowLoader } from '@redux/loaderSlice/selectors';
 import styles from './authLayout.module.scss';
 
 const AuthLayout = () => {

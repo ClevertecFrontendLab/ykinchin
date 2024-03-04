@@ -1,5 +1,5 @@
-import { Button } from 'antd';
 import { CSSProperties, ReactNode } from 'react';
+import { Button } from 'antd';
 
 type Props = {
     onClick: () => void;

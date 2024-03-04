@@ -1,5 +1,5 @@
-import { Space, Typography } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
+import { Space, Typography } from 'antd';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 
@@ -9,8 +9,8 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
-
 import { selectEmail, selectIsError } from '@redux/userSlice/selectors';
+
 import styles from './confirmEmail.module.scss';
 
 const ConfirmEmail = () => {

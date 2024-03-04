@@ -4,13 +4,13 @@ import { Navigate, Outlet } from 'react-router';
 import HeaderBreadcrumbs from '@components/breadcrumbs/HeaderBreadcrumbs';
 import Loader from '@components/loader/Loader';
 import { PATHS } from '@constants/PATHS';
+import { useAppSelector } from '@hooks/reduxHooks';
 import useAuth from '@hooks/useAuth';
 import Sidebar from '@pages/main-page/layout/sidebar/Sidebar';
 import { selectShowLoader } from '@redux/loaderSlice/selectors';
 
 import bg from '../../../assets/main_page_light.png';
 
-import { useAppSelector } from '@hooks/reduxHooks';
 import styles from './mainLayout.module.scss';
 
 const MainLayout = () => {
