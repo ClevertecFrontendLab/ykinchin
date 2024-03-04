@@ -4,15 +4,15 @@ import useMediaQuery from '@hooks/useMediaQuery';
 
 import NewFeedbackBtn from '../newFeedbackBtn/NewFeedbackBtn';
 
-import s from './emptyPage.module.scss';
+import styles from './emptyPage.module.scss';
 
 const EmptyPage = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     return (
-        <div className={s.wrapper}>
+        <div className={styles.wrapper}>
             <Card
-                className={s.card}
+                className={styles.card}
                 bodyStyle={{
                     padding: isMobile ? 0 : '18px 0',
                     textAlign: 'center',
@@ -34,18 +34,18 @@ const EmptyPage = () => {
                         textAlign: 'center',
                     }}
                 >
-                    <p className={s.newLineText}>
+                    <p className={styles.newLineText}>
                         Вы можете быть первым, кто оставит отзыв об этом фитнесс приложении.
                     </p>
-                    <p className={s.newLineText}>
+                    <p className={styles.newLineText}>
                         Поделитесь своим мнением и
                         {isMobile ? (
-                            <p className={s.newLineText}>опытом с другими пользователями</p>
+                            <p className={styles.newLineText}>опытом с другими пользователями</p>
                         ) : (
                             <> опытом с другими пользователями</>
                         )}
                     </p>
-                    <p className={s.newLineText}> и помогите им сделать правильный выбор.</p>
+                    <p className={styles.newLineText}> и помогите им сделать правильный выбор.</p>
                 </Typography.Text>
             </Card>
             <Space

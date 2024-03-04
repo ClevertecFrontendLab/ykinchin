@@ -2,7 +2,7 @@ import Lottie from 'react-lottie';
 
 import animationData from './loader.json';
 
-import s from './loader.module.scss';
+import styles from './loader.module.scss';
 
 const Loader = () => {
     const defaultOptions = {
@@ -15,8 +15,8 @@ const Loader = () => {
     };
 
     return (
-        <div className={s.wrapper} data-test-id='loader'>
-            <div className={s.loader}>
+        <div className={styles.wrapper} data-test-id='loader'>
+            <div className={styles.loader}>
                 <Lottie options={defaultOptions} />;
             </div>
         </div>

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Layout, Typography } from 'antd';
+import { useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';
@@ -14,7 +14,7 @@ import { history } from '@redux/configure-store';
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';
 
-import s from './sidebar.module.scss';
+import styles from './sidebar.module.scss';
 
 const Sidebar = () => {
     const [isOpened, setIsOpened] = useState(false);
@@ -40,11 +40,11 @@ const Sidebar = () => {
 
     return (
         <Sider width={sideBarWidth} style={{ minHeight: '100%' }}>
-            <div className={s.wrapper}>
-                <div className={s.topMenu}>
+            <div className={styles.wrapper}>
+                <div className={styles.topMenu}>
                     <IconWrapper
                         icon={isOpened ? FullLogo : ShortLogo}
-                        className={isOpened ? s.logo : s.logoCollapsed}
+                        className={isOpened ? styles.logo : styles.logoCollapsed}
                     />
                     <SideMenu isOpened={isOpened} />
                 </div>

@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from 'react';
 import { Card, Form, Space, Typography } from 'antd';
+import { ChangeEvent, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import CustomButton from '@components/customButton/CustomButton';
@@ -11,7 +11,7 @@ import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
 
-import s from './changePassword.module.scss';
+import styles from './changePassword.module.scss';
 
 const ChangePassword = () => {
     const { pathname } = useLocation();
@@ -38,13 +38,13 @@ const ChangePassword = () => {
     }
 
     return (
-        <Card bodyStyle={{ padding: 0 }} bordered={false} className={s.card}>
+        <Card bodyStyle={{ padding: 0 }} bordered={false} className={styles.card}>
             <Form
                 onFinish={onFinishHandler}
                 size='large'
                 wrapperCol={{ span: 24 }}
                 autoComplete='off'
-                className={s.form}
+                className={styles.form}
             >
                 <Typography.Title level={3}>Восстановление аккаунта</Typography.Title>
                 <Space direction='vertical' size={isMobile ? 8 : 'large'}>
@@ -64,7 +64,7 @@ const ChangePassword = () => {
                         htmlType='submit'
                         size='large'
                         type='primary'
-                        className={s.btn}
+                        className={styles.btn}
                         test='change-submit-button'
                     >
                         Сохранить

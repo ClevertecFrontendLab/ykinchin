@@ -15,7 +15,7 @@ import NewFeedbackBtn from './components/newFeedbackBtn/NewFeedbackBtn';
 import NewFeedbackModal from './components/newFeedbackModal/NewFeedbackModal';
 
 import { selectFeedbacks } from '@redux/feedbackSlice/selectors';
-import s from './feedbacks.module.scss';
+import styles from './feedbacks.module.scss';
 
 const Feedbacks = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
@@ -30,7 +30,11 @@ const Feedbacks = () => {
     return (
         <div style={{ height: '100%' }}>
             {feedbacks && feedbacks.length < 0 ? (
-                <div className={` ${s.wrapper} ${showAllFeedback ? s.listFull : s.listShort}`}>
+                <div
+                    className={` ${styles.wrapper} ${
+                        showAllFeedback ? styles.listFull : styles.listShort
+                    }`}
+                >
                     <FeedbackList feedbacks={feedbacks} showAllFeedback={showAllFeedback} />
                     <Space direction={isMobile ? 'vertical' : 'horizontal'}>
                         <NewFeedbackBtn />

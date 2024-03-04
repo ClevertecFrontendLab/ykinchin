@@ -2,7 +2,7 @@ import { Modal } from 'antd';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
-import s from './modalWindow.module.scss';
+import styles from './modalWindow.module.scss';
 
 type Props = {
     children: React.ReactNode;
@@ -30,7 +30,7 @@ const ModalWindow = ({ children, footer = '', open, title, closable = false, onC
                 display: 'flex',
                 justifyContent: 'center',
             }}
-            wrapClassName={s.modalWrap}
+            wrapClassName={styles.modalWrap}
             maskStyle={{
                 backdropFilter: 'blur(5px)',
                 background: 'rgba(121, 156, 212, 0.5)',

@@ -9,7 +9,7 @@ import bg from '../../../assets/enter_page_light.png';
 
 import { useAppSelector } from '@hooks/reduxHooks';
 import { selectShowLoader } from '@redux/loaderSlice/selectors';
-import s from './authLayout.module.scss';
+import styles from './authLayout.module.scss';
 
 const AuthLayout = () => {
     const { Content } = Layout;
@@ -19,7 +19,7 @@ const AuthLayout = () => {
     if (isAuth) return <Navigate to={PATHS.main} />;
 
     return (
-        <Layout className={s.layout}>
+        <Layout className={styles.layout}>
             <div>
                 <Content
                     style={{
@@ -29,7 +29,7 @@ const AuthLayout = () => {
                         backgroundSize: 'cover',
                     }}
                 >
-                    <div className={s.blurWrapper}>
+                    <div className={styles.blurWrapper}>
                         <Outlet />
                         {showLoader && <Loader />}
                     </div>

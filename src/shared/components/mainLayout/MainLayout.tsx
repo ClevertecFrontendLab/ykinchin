@@ -11,7 +11,7 @@ import { selectShowLoader } from '@redux/loaderSlice/selectors';
 import bg from '../../../assets/main_page_light.png';
 
 import { useAppSelector } from '@hooks/reduxHooks';
-import s from './mainLayout.module.scss';
+import styles from './mainLayout.module.scss';
 
 const MainLayout = () => {
     const isAuth = useAuth();
@@ -19,7 +19,7 @@ const MainLayout = () => {
 
     return isAuth ? (
         <Layout
-            className={s.layout}
+            className={styles.layout}
             style={{
                 minHeight: '100vh',
                 background: `no-repeat center bottom url(${bg})`,
@@ -29,7 +29,7 @@ const MainLayout = () => {
             <Sidebar />
             <div style={{ width: '100%' }}>
                 <Layout style={{ background: 0, height: '100%' }}>
-                    <HeaderBreadcrumbs className={s.breadCrumbs} />
+                    <HeaderBreadcrumbs className={styles.breadCrumbs} />
                     <Outlet />
                 </Layout>
             </div>

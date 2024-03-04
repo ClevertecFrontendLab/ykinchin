@@ -7,7 +7,7 @@ import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 
-import s from './BottomContent.module.scss';
+import styles from './BottomContent.module.scss';
 
 const BottomContent = () => {
     const dispatch = useAppDispatch();
@@ -20,7 +20,7 @@ const BottomContent = () => {
     };
 
     return (
-        <Row gutter={[0, 24]} className={s.wrapper} justify='space-between' align='bottom'>
+        <Row gutter={[0, 24]} className={styles.wrapper} justify='space-between' align='bottom'>
             <Col
                 xs={{ order: 2 }}
                 md={{ order: 1 }}
@@ -32,7 +32,7 @@ const BottomContent = () => {
             >
                 <CustomButton
                     size='large'
-                    className={s.reviewButton}
+                    className={styles.reviewButton}
                     onClick={onFeedbackHandler}
                     test='see-reviews'
                 >
@@ -57,7 +57,7 @@ const BottomContent = () => {
                                 gap: 1,
                             }}
                         >
-                            <Title className={s.downloadTitle}>Скачать на телефон</Title>
+                            <Title className={styles.downloadTitle}>Скачать на телефон</Title>
                             <Text style={{ fontSize: 14 }} type='secondary'>
                                 Доступтно в PRO-тарифе
                             </Text>
@@ -66,15 +66,15 @@ const BottomContent = () => {
                 >
                     <Row
                         justify={{ xs: 'space-around', md: 'space-between' }}
-                        className={s.devices}
+                        className={styles.devices}
                     >
                         <Col>
-                            <CustomButton className={s.deviceBtn} icon={<AndroidFilled />}>
+                            <CustomButton className={styles.deviceBtn} icon={<AndroidFilled />}>
                                 Android OS
                             </CustomButton>
                         </Col>
                         <Col>
-                            <CustomButton className={s.deviceBtn} icon={<AppleFilled />}>
+                            <CustomButton className={styles.deviceBtn} icon={<AppleFilled />}>
                                 Apple iOS
                             </CustomButton>
                         </Col>

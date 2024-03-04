@@ -9,19 +9,19 @@ import { history } from '@redux/configure-store';
 import SignInPage from './signIn/SignInPage';
 import SignUpPage from './signUp/SignUpPage';
 
-import s from './authPage.module.scss';
+import styles from './authPage.module.scss';
 
 const AuthPage = () => {
     const location = useLocation();
 
     return (
-        <div className={s.formWrapper}>
-            <div className={s.formWithLogo}>
-                <IconWrapper icon={FullLogo} className={s.logo} />
-                <div className={s.formTabs}>
+        <div className={styles.formWrapper}>
+            <div className={styles.formWithLogo}>
+                <IconWrapper icon={FullLogo} className={styles.logo} />
+                <div className={styles.formTabs}>
                     <Tabs
                         defaultActiveKey={location?.pathname}
-                        className={s.tabs}
+                        className={styles.tabs}
                         onChange={(key) => history.push(key)}
                     >
                         <Tabs.TabPane tab='Вход' key={PATHS.auth}>

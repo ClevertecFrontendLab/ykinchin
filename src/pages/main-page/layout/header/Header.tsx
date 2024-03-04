@@ -4,7 +4,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import CustomButton from '@components/customButton/CustomButton';
 import useMediaQuery from '@hooks/useMediaQuery';
 
-import s from './header.module.scss';
+import styles from './header.module.scss';
 
 const Header = () => {
     const isBelowMediumScreen = useMediaQuery('(min-width:834px)');
@@ -28,20 +28,20 @@ const Header = () => {
           };
 
     return (
-        <Header className={s.header}>
+        <Header className={styles.header}>
             <PageHeader
                 title={
                     isMobile ? (
                         <>
                             Приветствуем тебя
-                            <p className={s.newLineText}>
+                            <p className={styles.newLineText}>
                                 в CleverFit — приложении, которое поможет тебе добиться своей мечты!
                             </p>
                         </>
                     ) : isBelowMediumScreen ? (
                         <>
                             Приветствуем тебя в CleverFit — приложении,
-                            <p className={s.newLineText}>
+                            <p className={styles.newLineText}>
                                 которое поможет тебе добиться своей мечты!
                             </p>
                         </>

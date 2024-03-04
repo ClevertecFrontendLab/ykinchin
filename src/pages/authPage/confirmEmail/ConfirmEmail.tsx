@@ -11,7 +11,7 @@ import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
 
 import { selectEmail, selectIsError } from '@redux/userSlice/selectors';
-import s from './confirmEmail.module.scss';
+import styles from './confirmEmail.module.scss';
 
 const ConfirmEmail = () => {
     const { pathname } = useLocation();
@@ -54,27 +54,30 @@ const ConfirmEmail = () => {
             bodyStyle={{ padding: 0 }}
             status={isError ? 'error' : 'info'}
             resultTitle={
-                <Typography.Title level={3} className={s.title} style={{ margin: 0 }}>
+                <Typography.Title level={3} className={styles.title} style={{ margin: 0 }}>
                     {isError && 'Неверный код.'} Введите код для восстановления аккаунта
                 </Typography.Title>
             }
             resultDescription={
                 <>
-                    <p className={s.newLineText}>
+                    <p className={styles.newLineText}>
                         Мы отправили вам на e-mail
                         {isMobile ? (
-                            <p className={s.newLineText}>
+                            <p className={styles.newLineText}>
                                 <strong>{email}</strong>
                             </p>
                         ) : (
                             <strong>{email}</strong>
                         )}
                     </p>
-                    <p className={s.newLineText}> шестизначный код. Введите его в поле ниже.</p>
+                    <p className={styles.newLineText}>
+                        {' '}
+                        шестизначный код. Введите его в поле ниже.
+                    </p>
                 </>
             }
         >
-            <Space direction='vertical' size='large' align='center' className={s.wrapper}>
+            <Space direction='vertical' size='large' align='center' className={styles.wrapper}>
                 <VerificationInput
                     onComplete={onCompleteHandler}
                     onChange={handleVerificationInputChange}
@@ -86,14 +89,18 @@ const ConfirmEmail = () => {
                         onPaste: onPasteHandler,
                     }}
                     classNames={{
-                        container: `${s.container}`,
-                        character: `${s.character} ${isError && s.characterError}`,
+                        container: `${styles.container}`,
+                        character: `${styles.character} ${isError && styles.characterError}`,
                         characterInactive: 'character--inactive',
                     }}
                 />
                 <Typography.Text type='secondary'>
                     Не пришло письмо? Проверьте
-                    {isMobile ? <p className={s.newLineText}> папку Спам.</p> : <> папку Спам.</>}
+                    {isMobile ? (
+                        <p className={styles.newLineText}> папку Спам.</p>
+                    ) : (
+                        <> папку Спам.</>
+                    )}
                 </Typography.Text>
             </Space>
         </ResultCard>

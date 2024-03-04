@@ -1,5 +1,5 @@
-import React from 'react';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
+import React from 'react';
 import { IContentCard } from 'src/shared/types';
 
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
@@ -8,7 +8,7 @@ import useMediaQuery from '@hooks/useMediaQuery';
 import BottomContent from './components/bottomContent/BottomContent';
 import ContentCard from './components/contentCard/ContentCard';
 
-import s from './content.module.scss';
+import styles from './content.module.scss';
 
 const listData: string[] = [
     'планировать свои тренировки на каледаре, выбирая тип и уровень нагрузки;',
@@ -37,8 +37,8 @@ const Content = () => {
 
     const { Content } = Layout;
     return (
-        <Content className={s.content}>
-            <div className={s.wrapper}>
+        <Content className={styles.content}>
+            <div className={styles.wrapper}>
                 <Row gutter={[16, 16]}>
                     <Col>
                         <Row gutter={[16, 24]}>
@@ -47,14 +47,14 @@ const Content = () => {
                                     style={{ height: `${isMobile && '368px'} ` }}
                                     bodyStyle={{ padding: `${isMobile && '16px'}` }}
                                     bordered={false}
-                                    className={s.card}
+                                    className={styles.card}
                                 >
                                     <List
                                         header={<div>С CleverFit ты сможешь:</div>}
-                                        className={s.list}
+                                        className={styles.list}
                                         dataSource={listData}
                                         renderItem={(item) => (
-                                            <List.Item className={s.listItem}>
+                                            <List.Item className={styles.listItem}>
                                                 <Typography.Text
                                                     style={{ maxWidth: `${isMobile && '275px'}` }}
                                                 >
@@ -79,7 +79,7 @@ const Content = () => {
                             </Col>
                             <Col span={24}>
                                 <Card
-                                    className={s.card}
+                                    className={styles.card}
                                     bordered={false}
                                     bodyStyle={{ padding: `${isMobile && '16px'}` }}
                                 >

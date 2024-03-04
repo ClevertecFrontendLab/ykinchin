@@ -3,7 +3,7 @@ import { IContentCard } from 'src/shared/types';
 import CustomButton from '@components/customButton/CustomButton';
 import CustomCard from '@components/customCard/CustomCard';
 
-import s from './contentCard.module.scss';
+import styles from './contentCard.module.scss';
 
 type Props = {
     data: IContentCard;
@@ -22,7 +22,7 @@ const ContentCard = ({ data }: Props) => {
                 fontSize: 16,
             }}
             bodyStyle={{ padding: 0 }}
-            className={s.card}
+            className={styles.card}
         >
             <CustomButton icon={data.icon}>{data.buttonText}</CustomButton>
         </CustomCard>
