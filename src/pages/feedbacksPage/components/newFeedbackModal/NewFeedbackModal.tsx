@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Form, Input, Space } from 'antd';
+import { useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import CustomRate from '@components/customRate/CustomRate';
@@ -39,10 +39,12 @@ const NewFeedbackModal = () => {
         dispatch(postFeedback(feedback));
     };
 
+    const onCancelHandler = () => dispatch(toggleNewFeedback(false));
+
     return (
         <ModalWindow
             open={isOpened}
-            onCancel={() => dispatch(toggleNewFeedback(false))}
+            onCancel={onCancelHandler}
             closable={true}
             title='Ваш отзыв'
             footer={[

@@ -15,6 +15,8 @@ const ModalErrorPost = () => {
         dispatch(toggleNewFeedback(true));
     };
 
+    const onCloseHandler = () => dispatch(toggleErrorModal(false));
+
     return (
         <ModalWindow open={isOpened}>
             <ResultCard
@@ -44,7 +46,7 @@ const ModalErrorPost = () => {
                         size='large'
                         type='default'
                         style={{ fontSize: 14 }}
-                        onClick={() => dispatch(toggleErrorModal(false))}
+                        onClick={onCloseHandler}
                     >
                         Закрыть
                     </CustomButton>

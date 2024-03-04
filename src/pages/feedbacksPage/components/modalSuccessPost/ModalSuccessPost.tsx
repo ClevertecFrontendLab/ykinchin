@@ -9,6 +9,8 @@ const ModalSuccessPost = () => {
     const dispatch = useAppDispatch();
     const isOpened = useAppSelector((state) => state.feedback.isSuccessModalOpened as boolean);
 
+    const onCloseHandler = () => dispatch(toggleSuccessModal(false));
+
     return (
         <ModalWindow open={isOpened}>
             <ResultCard
@@ -16,7 +18,7 @@ const ModalSuccessPost = () => {
                 status='success'
                 resultTitle='Отзыв успешно опубликован'
                 btnText='Отлично'
-                onClick={() => dispatch(toggleSuccessModal(false))}
+                onClick={onCloseHandler}
             />
         </ModalWindow>
     );

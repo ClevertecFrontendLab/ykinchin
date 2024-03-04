@@ -7,13 +7,15 @@ const NewFeedbackBtn = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
 
+    const onOpenHandler = () => dispatch(toggleNewFeedback(true));
+
     return (
         <CustomButton
             block={isMobile && true}
             size='large'
             type='primary'
             style={{ backgroundColor: '#2F54EB', fontSize: 14 }}
-            onClick={() => dispatch(toggleNewFeedback(true))}
+            onClick={onOpenHandler}
             test='write-review'
         >
             Написать отзыв
