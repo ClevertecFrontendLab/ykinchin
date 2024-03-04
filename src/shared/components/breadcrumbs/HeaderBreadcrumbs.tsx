@@ -14,8 +14,7 @@ type Props = {
 };
 
 const HeaderBreadcrumbs = ({ className }: Props) => {
-    const location = useLocation();
-    const currentLocation = location.pathname;
+    const { pathname } = useLocation();
 
     const breadcrumbItems: NavList[] = [
         { path: PATHS.feedbacks, breadcrumbName: 'Отзывы пользователей' },
@@ -28,7 +27,7 @@ const HeaderBreadcrumbs = ({ className }: Props) => {
             </Breadcrumb.Item>
             {breadcrumbItems.map(
                 (item) =>
-                    currentLocation.startsWith(item.path) && (
+                    pathname.startsWith(item.path) && (
                         <Breadcrumb.Item key={item.path}>
                             <Link to={item.path}>{item.breadcrumbName}</Link>
                         </Breadcrumb.Item>
