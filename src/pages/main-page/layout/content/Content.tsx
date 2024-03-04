@@ -1,5 +1,5 @@
-import React from 'react';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
+import React from 'react';
 import { IContentCard } from 'src/shared/types';
 
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
@@ -47,8 +47,8 @@ const cardData: IContentCard[] = [
 const Content = () => {
     const isAboveMediumScreen = useMediaQuery('(min-width:835px)');
     const isMobile = useMediaQuery('(max-width:425px)');
-
     const { Content } = Layout;
+
     return (
         <Content className={styles.content}>
             <div className={styles.wrapper}>
@@ -84,7 +84,7 @@ const Content = () => {
                                                                 ))}
                                                         </>
                                                     ) : (
-                                                        <>{'\u2014 ' + item}</>
+                                                        <>{'\u2014 ' + item.content}</>
                                                     )}
                                                 </Typography.Text>
                                             </List.Item>
