@@ -17,7 +17,7 @@ const SuccessChangePassword = () => {
             resultDescription={
                 <>
                     Теперь можно войти в аккаунт, используя
-                    <br /> свой e-mail и пароль
+                    <p style={{ marginBottom: 0 }}> свой e-mail и пароль</p>
                 </>
             }
             btnText='Вход'

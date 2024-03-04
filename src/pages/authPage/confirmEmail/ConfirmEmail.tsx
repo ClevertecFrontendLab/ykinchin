@@ -60,9 +60,17 @@ const ConfirmEmail = () => {
             }
             resultDescription={
                 <>
-                    Мы отправили вам на e-mail {isMobile && <br />}
-                    <strong>{email}</strong> <br />
-                    шестизначный код. Введите его в поле ниже.
+                    <p className={s.newLineText}>
+                        Мы отправили вам на e-mail
+                        {isMobile ? (
+                            <p className={s.newLineText}>
+                                <strong>{email}</strong>
+                            </p>
+                        ) : (
+                            <strong>{email}</strong>
+                        )}
+                    </p>
+                    <p className={s.newLineText}> шестизначный код. Введите его в поле ниже.</p>
                 </>
             }
         >
@@ -84,7 +92,8 @@ const ConfirmEmail = () => {
                     }}
                 />
                 <Typography.Text type='secondary'>
-                    Не пришло письмо? Проверьте {isMobile && <br />} папку Спам.
+                    Не пришло письмо? Проверьте
+                    {isMobile ? <p className={s.newLineText}> папку Спам.</p> : <> папку Спам.</>}
                 </Typography.Text>
             </Space>
         </ResultCard>

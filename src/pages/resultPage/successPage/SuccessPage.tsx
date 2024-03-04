@@ -20,7 +20,10 @@ const SuccessPage = () => {
             resultDescription={
                 <>
                     Регистрация прошла успешно. Зайдите
-                    <br /> в приложение, используя свой e-mail и пароль.
+                    <p style={{ marginBottom: 0 }}>
+                        {' '}
+                        в приложение, используя свой e-mail и пароль.
+                    </p>
                 </>
             }
             btnText='Войти'

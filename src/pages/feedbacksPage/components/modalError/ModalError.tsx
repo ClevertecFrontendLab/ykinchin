@@ -28,7 +28,16 @@ const ModalError = () => {
                     style={{ padding: 0 }}
                     status='500'
                     title='Что-то пошло не так'
-                    subTitle={<>Произошла ошибка,{isMobile && <br />} попробуйте ещё раз.</>}
+                    subTitle={
+                        <>
+                            Произошла ошибка,
+                            {isMobile ? (
+                                <p style={{ marginBottom: 0 }}> попробуйте ещё раз.</p>
+                            ) : (
+                                <> попробуйте ещё раз.</>
+                            )}{' '}
+                        </>
+                    }
                     extra={[
                         <CustomButton
                             test='check-back-button'

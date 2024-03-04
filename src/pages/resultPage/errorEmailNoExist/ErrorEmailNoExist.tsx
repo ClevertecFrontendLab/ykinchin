@@ -26,8 +26,12 @@ const ErrorEmailNoExist = () => {
             }
             resultDescription={
                 <>
-                    Мы не нашли в базе вашего e-mail. Попробуйте {!isMobile && <br />} войти с
-                    другим e-mail.
+                    Мы не нашли в базе вашего e-mail. Попробуйте{' '}
+                    {!isMobile ? (
+                        <p style={{ marginBottom: 0 }}>войти с другим e-mail.</p>
+                    ) : (
+                        <>войти с другим e-mail.</>
+                    )}
                 </>
             }
         >

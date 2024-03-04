@@ -19,6 +19,10 @@
         position: 'relative';
         top: -18px;
 
+        .newLineText {
+            margin-bottom: 0;
+        }
+
         @include m {
             height: 314px;
             top: 0;
