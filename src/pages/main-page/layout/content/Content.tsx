@@ -1,5 +1,5 @@
-import { Card, Col, Layout, List, Row, Typography } from 'antd';
 import React from 'react';
+import { Card, Col, Layout, List, Row, Typography } from 'antd';
 import { IContentCard } from 'src/shared/types';
 
 import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';

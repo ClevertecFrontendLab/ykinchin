@@ -3,6 +3,7 @@ import { push } from 'redux-first-history';
 
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
+import { STATUS } from '@constants/responseStatus';
 import { setIsLoading } from '@redux/slices/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -23,7 +24,7 @@ export const registration = createAsyncThunk(
             return thunkAPI.fulfillWithValue(response.data);
         } catch (e) {
             if (axios.isAxiosError(e)) {
-                if (e.response?.status === 409) {
+                if (e.response?.status === STATUS.userExist) {
                     thunkAPI.dispatch(push(PATHS.userExistError));
                 } else {
                     thunkAPI.dispatch(push(PATHS.error));

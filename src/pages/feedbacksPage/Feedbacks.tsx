@@ -1,5 +1,5 @@
-import { Space } from 'antd';
 import { useEffect, useState } from 'react';
+import { Space } from 'antd';
 
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';

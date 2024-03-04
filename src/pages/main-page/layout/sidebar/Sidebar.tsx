@@ -1,5 +1,5 @@
-import { Layout, Typography } from 'antd';
 import { useState } from 'react';
+import { Layout, Typography } from 'antd';
 
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';

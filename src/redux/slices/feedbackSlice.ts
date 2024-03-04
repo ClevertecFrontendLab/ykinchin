@@ -1,5 +1,6 @@
 import { IFeedback } from 'src/shared/types/feedbackType';
 
+import { STATUS } from '@constants/responseStatus';
 import { getFeedbacks } from '@redux/thunks/getFeedbacks';
 import { postFeedback } from '@redux/thunks/postFeedback';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
@@ -44,7 +45,7 @@ const feedbackSlice = createSlice({
         });
         builder.addCase(getFeedbacks.rejected, (state, action) => {
             const status = action.payload;
-            if (status !== 403) {
+            if (status !== STATUS.forbidden) {
                 state.isFetchingErrorModalOpened = true;
             }
         });

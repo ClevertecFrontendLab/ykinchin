@@ -1,5 +1,5 @@
-import { Button, Form, Space } from 'antd';
 import { ChangeEvent, useState } from 'react';
+import { Button, Form, Space } from 'antd';
 
 import { GooglePlusOutlined } from '@ant-design/icons';
 import EmailInput from '@components/emailInput/EmailInput';

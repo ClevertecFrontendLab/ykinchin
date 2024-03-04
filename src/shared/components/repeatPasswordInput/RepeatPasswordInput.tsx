@@ -1,5 +1,5 @@
-import { Form, Input } from 'antd';
 import { ChangeEvent } from 'react';
+import { Form, Input } from 'antd';
 
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 

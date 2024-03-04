@@ -1,5 +1,5 @@
-import { Space, Typography } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
+import { Space, Typography } from 'antd';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 

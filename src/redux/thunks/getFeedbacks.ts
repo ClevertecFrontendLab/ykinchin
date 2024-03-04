@@ -4,6 +4,7 @@ import { IFeedback } from 'src/shared/types/feedbackType';
 
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
+import { STATUS } from '@constants/responseStatus';
 import { RootState } from '@redux/configure-store';
 import { logout } from '@redux/slices/authSlice';
 import { setIsLoading } from '@redux/slices/loaderSlice';
@@ -28,7 +29,7 @@ export const getFeedbacks = createAsyncThunk<IFeedback[], void>(
             return thunkAPI.fulfillWithValue(response.data);
         } catch (e) {
             if (axios.isAxiosError(e)) {
-                if (e.response?.status === 403) {
+                if (e.response?.status === STATUS.forbidden) {
                     thunkAPI.dispatch(replace(PATHS.auth));
                     thunkAPI.dispatch(logout());
                 } else {
