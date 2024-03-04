@@ -1,5 +1,5 @@
-import { FC, useState } from 'react';
 import { Form, Input, Space } from 'antd';
+import { useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import CustomRate from '@components/customRate/CustomRate';
@@ -14,7 +14,7 @@ type Feedback = {
     rating: number;
 };
 
-const NewFeedbackModal: FC = () => {
+const NewFeedbackModal = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
     const [feedback, setFeedback] = useState<Feedback>({ message: '', rating: 0 });

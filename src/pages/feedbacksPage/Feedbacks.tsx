@@ -28,7 +28,7 @@ const Feedbacks = () => {
 
     return (
         <div style={{ height: '100%' }}>
-            {feedbacks && feedbacks.length > 0 ? (
+            {feedbacks && feedbacks.length < 0 ? (
                 <div className={` ${s.wrapper} ${showAllFeedback ? s.listFull : s.listShort}`}>
                     <FeedbackList feedbacks={feedbacks} showAllFeedback={showAllFeedback} />
                     <Space direction={isMobile ? 'vertical' : 'horizontal'}>

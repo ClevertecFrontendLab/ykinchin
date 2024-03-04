@@ -1,5 +1,4 @@
 import { Card, Space, Typography } from 'antd';
-import { FC } from 'react';
 
 import useMediaQuery from '@hooks/useMediaQuery';
 
@@ -7,7 +6,7 @@ import NewFeedbackBtn from '../newFeedbackBtn/NewFeedbackBtn';
 
 import s from './emptyPage.module.scss';
 
-const EmptyPage: FC = () => {
+const EmptyPage = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     return (

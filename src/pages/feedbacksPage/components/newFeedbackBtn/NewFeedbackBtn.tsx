@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { toggleNewFeedback } from '@redux/slices/feedbackSlice';
 
-const NewFeedbackBtn: FC = () => {
+const NewFeedbackBtn = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
 

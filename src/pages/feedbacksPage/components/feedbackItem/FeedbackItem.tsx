@@ -1,5 +1,4 @@
 import { Avatar, Card, Space, Typography } from 'antd';
-import { FC } from 'react';
 import { IFeedback } from 'src/shared/types/feedbackType';
 
 import { UserOutlined } from '@ant-design/icons';
@@ -9,11 +8,11 @@ import { formatDate } from '@utils/dateUtils';
 
 import s from './feedbackItem.module.scss';
 
-type FeedbackItemProps = {
+type Props = {
     feedback: IFeedback;
 };
 
-const FeedbackItem: FC<FeedbackItemProps> = ({ feedback }) => {
+const FeedbackItem = ({ feedback }: Props) => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const { Text } = Typography;
 

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Card, Result } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import { toggFetchingErrorModal } from '@redux/slices/feedbackSlice';
 
-const ModalError: FC = () => {
+const ModalError = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
     const navigate = useNavigate();

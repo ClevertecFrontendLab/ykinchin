@@ -1,15 +1,14 @@
-import { FC } from 'react';
 import { List } from 'antd';
 import { IFeedback } from 'src/shared/types/feedbackType';
 
 import FeedbackItem from '../feedbackItem/FeedbackItem';
 
-type FeedbackListProps = {
+type Props = {
     feedbacks: IFeedback[];
     showAllFeedback: boolean;
 };
 
-const FeedbackList: FC<FeedbackListProps> = ({ feedbacks, showAllFeedback }) => {
+const FeedbackList = ({ feedbacks, showAllFeedback }: Props) => {
     const sortedFeedbacks = [...feedbacks].sort(
         (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
     );
