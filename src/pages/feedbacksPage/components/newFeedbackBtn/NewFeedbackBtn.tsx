@@ -11,7 +11,7 @@ const NewFeedbackBtn = () => {
 
     return (
         <CustomButton
-            block={isMobile && true}
+            block={isMobile}
             size='large'
             type='primary'
             style={{ backgroundColor: '#2F54EB', fontSize: 14 }}

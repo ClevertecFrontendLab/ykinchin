@@ -49,7 +49,7 @@ const NewFeedbackModal = () => {
             title='Ваш отзыв'
             footer={[
                 <CustomButton
-                    block={isMobile && true}
+                    block={isMobile}
                     onClick={onPostHandler}
                     key='publish'
                     type='primary'

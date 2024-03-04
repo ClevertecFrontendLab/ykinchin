@@ -1,6 +1,6 @@
-import React from 'react';
 import { Card, Result } from 'antd';
 import { ResultStatusType } from 'antd/lib/result';
+import React from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 
@@ -40,7 +40,7 @@ const ResultCard = ({
                     btnText && (
                         <CustomButton
                             test={test}
-                            block={true}
+                            block
                             onClick={onClick}
                             size='large'
                             type='primary'

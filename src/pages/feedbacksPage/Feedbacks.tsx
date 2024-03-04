@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { Space } from 'antd';
+import { useEffect, useState } from 'react';
 
 import CustomButton from '@components/customButton/CustomButton';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
@@ -34,7 +34,7 @@ const Feedbacks = () => {
                     <Space direction={isMobile ? 'vertical' : 'horizontal'}>
                         <NewFeedbackBtn />
                         <CustomButton
-                            block={isMobile && true}
+                            block={isMobile}
                             size='large'
                             type='link'
                             style={{ color: '#2F54EB' }}
