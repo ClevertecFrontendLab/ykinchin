@@ -13,7 +13,7 @@ import { confirmEmail } from '@redux/thunks/confirmEmail';
 import s from './confirmEmail.module.scss';
 
 const ConfirmEmail = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
@@ -43,7 +43,7 @@ const ConfirmEmail = () => {
         dispatch(confirmEmail({ email: email, code: code }));
     };
 
-    if (prevLocation !== PATHS.auth && prevLocation !== location.pathname) {
+    if (prevLocation !== PATHS.auth && prevLocation !== pathname) {
         return <Navigate to={PATHS.auth} />;
     }
 

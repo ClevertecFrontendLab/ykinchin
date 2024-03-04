@@ -14,7 +14,7 @@ import { changePassword } from '@redux/thunks/changePassword';
 import s from './changePassword.module.scss';
 
 const ChangePassword = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
@@ -33,7 +33,7 @@ const ChangePassword = () => {
         );
     };
 
-    if (prevLocation !== PATHS.confirmEmail && prevLocation !== location.pathname) {
+    if (prevLocation !== PATHS.confirmEmail && prevLocation !== pathname) {
         return <Navigate to={PATHS.auth} />;
     }
 
