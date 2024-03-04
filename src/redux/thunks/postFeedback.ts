@@ -4,6 +4,7 @@ import { REQUEST_URL } from '@constants/requestUrl';
 import { RootState } from '@redux/configure-store';
 import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { getFeedbacks } from './getFeedbacks';
 
 type Feedback = {
