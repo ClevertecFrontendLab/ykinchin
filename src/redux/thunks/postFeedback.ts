@@ -4,6 +4,7 @@ import { REQUEST_URL } from '@constants/requestUrl';
 import { RootState } from '@redux/configure-store';
 import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { getFeedbacks } from './getFeedbacks';
 
 type Feedback = {
     message: string;
@@ -23,6 +24,7 @@ export const postFeedback = createAsyncThunk('/postFeedback', async (data: Feedb
                 Authorization: `Bearer ${accessToken}`,
             },
         });
+        thunkAPI.dispatch(getFeedbacks());
         return thunkAPI.fulfillWithValue(response.data);
     } catch (e) {
         if (axios.isAxiosError(e)) {
