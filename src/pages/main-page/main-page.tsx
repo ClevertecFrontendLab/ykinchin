@@ -4,12 +4,8 @@ import Loader from '@components/loader/Loader';
 
 const LazyMainPage = lazy(() => import('./layout/MainPageLayout'));
 
-export const MainPage = () => {
-    return (
-        <>
-            <Suspense fallback={<Loader />}>
-                <LazyMainPage />
-            </Suspense>
-        </>
-    );
-};
+export const MainPage = () => (
+    <Suspense fallback={<Loader />}>
+        <LazyMainPage />
+    </Suspense>
+);

@@ -1,5 +1,5 @@
-import { CSSProperties, ReactNode } from 'react';
 import { Button } from 'antd';
+import { CSSProperties, ReactNode } from 'react';
 
 type Props = {
     onClick: () => void;
@@ -28,23 +28,21 @@ const CustomButton = ({
     style,
     htmlType,
     block,
-}: Partial<Props>) => {
-    return (
-        <Button
-            block={block}
-            htmlType={htmlType}
-            className={className}
-            onClick={onClick}
-            type={type}
-            size={size}
-            disabled={disabled}
-            icon={icon}
-            style={style}
-            data-test-id={test}
-        >
-            {children}
-        </Button>
-    );
-};
+}: Partial<Props>) => (
+    <Button
+        block={block}
+        htmlType={htmlType}
+        className={className}
+        onClick={onClick}
+        type={type}
+        size={size}
+        disabled={disabled}
+        icon={icon}
+        style={style}
+        data-test-id={test}
+    >
+        {children}
+    </Button>
+);
 
 export default CustomButton;
