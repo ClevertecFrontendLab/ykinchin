@@ -3,7 +3,7 @@ import { push } from 'redux-first-history';
 
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
-import { setIsLoading } from '@redux/slices/loaderSlice';
+import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface IChangeData {

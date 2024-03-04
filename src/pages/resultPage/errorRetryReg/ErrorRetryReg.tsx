@@ -6,11 +6,13 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { registration } from '@redux/thunks/registerUser';
+import { selectEmail, selectPassword } from '@redux/userSlice/selectors';
 
 const ErrorRetryReg = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
-    const { email, password } = useAppSelector((state) => state.user);
+    const email = useAppSelector(selectEmail);
+    const password = useAppSelector(selectPassword);
 
     const onRetryHandler = async () => {
         history.back();

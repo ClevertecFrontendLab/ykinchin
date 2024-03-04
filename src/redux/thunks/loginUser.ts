@@ -3,8 +3,8 @@ import { replace } from 'redux-first-history';
 
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
-import { setAuth } from '@redux/slices/authSlice';
-import { setIsLoading } from '@redux/slices/loaderSlice';
+import { setAuth } from '@redux/authSlice/authSlice';
+import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface ILoginData {

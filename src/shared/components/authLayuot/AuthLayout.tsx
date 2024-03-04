@@ -3,17 +3,18 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import Loader from '@components/loader/Loader';
 import { PATHS } from '@constants/PATHS';
-import { useAppSelector } from '@hooks/reduxHooks';
 import useAuth from '@hooks/useAuth';
 
 import bg from '../../../assets/enter_page_light.png';
 
+import { useAppSelector } from '@hooks/reduxHooks';
+import { selectShowLoader } from '@redux/loaderSlice/selectors';
 import s from './authLayout.module.scss';
 
 const AuthLayout = () => {
     const { Content } = Layout;
-    const showLoader = useAppSelector((state) => state.loader.showLoader);
     const isAuth = useAuth();
+    const showLoader = useAppSelector(selectShowLoader);
 
     if (isAuth) return <Navigate to={PATHS.main} />;
 

@@ -1,14 +1,14 @@
+import { selectIsAuth } from '@redux/authSlice/selectors';
 import { useEffect, useState } from 'react';
-
 import { useAppSelector } from './reduxHooks';
 
 const useAuth = () => {
-    const { isAuth } = useAppSelector((state) => state.auth);
-
     const [isAuthenticated, setIsAuthenticated] = useState(() => {
         const userAuth: string | null = localStorage.getItem('user');
         return !!userAuth;
     });
+
+    const isAuth = useAppSelector(selectIsAuth);
 
     useEffect(() => {
         const onStorageChangeHandler = () => {

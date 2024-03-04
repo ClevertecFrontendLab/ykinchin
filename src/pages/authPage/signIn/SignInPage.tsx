@@ -8,9 +8,9 @@ import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { useAppDispatch } from '@hooks/reduxHooks';
-import { setUser } from '@redux/slices/userSlice';
 import { checkEmail } from '@redux/thunks/checkEmail';
 import { login } from '@redux/thunks/loginUser';
+import { setUser } from '@redux/userSlice/userSlice';
 
 import s from './signInPage.module.scss';
 

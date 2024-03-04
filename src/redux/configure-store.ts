@@ -3,10 +3,10 @@ import { createReduxHistoryContext } from 'redux-first-history';
 
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import authReducer from './slices/authSlice';
-import feedbackSlice from './slices/feedbackSlice';
-import loaderSlice from './slices/loaderSlice';
-import userSlice from './slices/userSlice';
+import authReducer from './authSlice/authSlice';
+import feedbackSlice from './feedbackSlice/feedbackSlice';
+import loaderSlice from './loaderSlice/loaderSlice';
+import userSlice from './userSlice/userSlice';
 
 const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHistoryContext({
     history: createBrowserHistory(),

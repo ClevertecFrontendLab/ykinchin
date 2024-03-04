@@ -6,7 +6,8 @@ import CustomRate from '@components/customRate/CustomRate';
 import ModalWindow from '@components/modal/ModalWindow';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
-import { toggleNewFeedback } from '@redux/slices/feedbackSlice';
+import { toggleNewFeedback } from '@redux/feedbackSlice/feedbackSlice';
+import { selectIsNewFeedbackModal } from '@redux/feedbackSlice/selectors';
 import { postFeedback } from '@redux/thunks/postFeedback';
 
 type Feedback = {
@@ -18,7 +19,7 @@ const NewFeedbackModal = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
     const [feedback, setFeedback] = useState<Feedback>({ message: '', rating: 0 });
-    const isOpened = useAppSelector((state) => state.feedback.isNewFeedbackModalOpened as boolean);
+    const isOpened = useAppSelector(selectIsNewFeedbackModal);
 
     const onRatingChangeHandler = (value: number) => {
         setFeedback((prevFeedback) => ({

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { REQUEST_URL } from '@constants/requestUrl';
 import { RootState } from '@redux/configure-store';
-import { setIsLoading } from '@redux/slices/loaderSlice';
+import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 type Feedback = {

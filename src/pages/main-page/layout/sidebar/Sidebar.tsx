@@ -8,8 +8,8 @@ import Logout from '@components/icons/svgs/Logout';
 import ShortLogo from '@components/icons/svgs/ShortLogo';
 import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
+import { logout } from '@redux/authSlice/authSlice';
 import { history } from '@redux/configure-store';
-import { logout } from '@redux/slices/authSlice';
 
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';

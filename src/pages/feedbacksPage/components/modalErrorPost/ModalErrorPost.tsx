@@ -3,12 +3,13 @@ import ModalWindow from '@components/modal/ModalWindow';
 import ResultCard from '@components/resultCard/ResultCard';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
-import { toggleErrorModal, toggleNewFeedback } from '@redux/slices/feedbackSlice';
+import { toggleErrorModal, toggleNewFeedback } from '@redux/feedbackSlice/feedbackSlice';
+import { selectIsErrorModal } from '@redux/feedbackSlice/selectors';
 
 const ModalErrorPost = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
-    const isOpened = useAppSelector((state) => state.feedback.isErrorModalOpened as boolean);
+    const isOpened = useAppSelector(selectIsErrorModal);
 
     const onRetryHandler = () => {
         dispatch(toggleErrorModal(false));

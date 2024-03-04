@@ -2,12 +2,13 @@ import ModalWindow from '@components/modal/ModalWindow';
 import ResultCard from '@components/resultCard/ResultCard';
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
-import { toggleSuccessModal } from '@redux/slices/feedbackSlice';
+import { toggleSuccessModal } from '@redux/feedbackSlice/feedbackSlice';
+import { selectIsSuccessModal } from '@redux/feedbackSlice/selectors';
 
 const ModalSuccessPost = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
-    const isOpened = useAppSelector((state) => state.feedback.isSuccessModalOpened as boolean);
+    const isOpened = useAppSelector(selectIsSuccessModal);
 
     const onCloseHandler = () => dispatch(toggleSuccessModal(false));
 

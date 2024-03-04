@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '@constants/PATHS';
 import { useAppDispatch } from '@hooks/reduxHooks';
+import { setAuth } from '@redux/authSlice/authSlice';
 import { history } from '@redux/configure-store';
-import { setAuth } from '@redux/slices/authSlice';
 
 const GoogleRedirect = () => {
     const dispatch = useAppDispatch();

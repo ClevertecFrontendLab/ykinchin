@@ -5,9 +5,9 @@ import { IFeedback } from 'src/shared/types/feedbackType';
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { STATUS } from '@constants/responseStatus';
+import { logout } from '@redux/authSlice/authSlice';
 import { RootState } from '@redux/configure-store';
-import { logout } from '@redux/slices/authSlice';
-import { setIsLoading } from '@redux/slices/loaderSlice';
+import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getFeedbacks = createAsyncThunk<IFeedback[], void>(

@@ -6,8 +6,8 @@ import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
 import RepeatPasswordInput from '@components/repeatPasswordInput/RepeatPasswordInput';
 import { useAppDispatch } from '@hooks/reduxHooks';
-import { setUser } from '@redux/slices/userSlice';
 import { registration } from '@redux/thunks/registerUser';
+import { setUser } from '@redux/userSlice/userSlice';
 
 import styles from './signUpPage.module.scss';
 

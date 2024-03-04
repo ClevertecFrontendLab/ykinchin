@@ -7,11 +7,12 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { checkEmail } from '@redux/thunks/checkEmail';
+import { selectEmail } from '@redux/userSlice/selectors';
 
 const ErrorEmailCheck = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
-    const { email } = useAppSelector((state) => state.user);
+    const email = useAppSelector(selectEmail);
 
     const onRetunHandler = async () => {
         if (email) {

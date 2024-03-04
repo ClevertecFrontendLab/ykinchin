@@ -14,13 +14,14 @@ import ModalSuccessPost from './components/modalSuccessPost/ModalSuccessPost';
 import NewFeedbackBtn from './components/newFeedbackBtn/NewFeedbackBtn';
 import NewFeedbackModal from './components/newFeedbackModal/NewFeedbackModal';
 
+import { selectFeedbacks } from '@redux/feedbackSlice/selectors';
 import s from './feedbacks.module.scss';
 
 const Feedbacks = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const [showAllFeedback, setShowAllFeedback] = useState(false);
     const dispatch = useAppDispatch();
-    const feedbacks = useAppSelector((state) => state.feedback.feedbacks);
+    const feedbacks = useAppSelector(selectFeedbacks);
 
     useEffect(() => {
         dispatch(getFeedbacks());

@@ -13,7 +13,7 @@ export type feedbackState = {
     feedbacks: IFeedback[];
 };
 
-const initialState: Partial<feedbackState> = {
+const initialState: feedbackState = {
     isErrorModalOpened: false,
     isSuccessModalOpened: false,
     isNewFeedbackModalOpened: false,

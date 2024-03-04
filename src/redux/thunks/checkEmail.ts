@@ -4,7 +4,7 @@ import { push } from 'redux-first-history';
 import { PATHS } from '@constants/PATHS';
 import { REQUEST_URL } from '@constants/requestUrl';
 import { STATUS } from '@constants/responseStatus';
-import { setIsLoading } from '@redux/slices/loaderSlice';
+import { setIsLoading } from '@redux/loaderSlice/loaderSlice';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const checkEmail = createAsyncThunk('auth/checkEmail', async (email: string, thunkAPI) => {

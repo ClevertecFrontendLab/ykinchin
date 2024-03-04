@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { Space, Typography } from 'antd';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 
@@ -10,6 +10,7 @@ import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
 
+import { selectEmail, selectIsError } from '@redux/userSlice/selectors';
 import s from './confirmEmail.module.scss';
 
 const ConfirmEmail = () => {
@@ -18,8 +19,9 @@ const ConfirmEmail = () => {
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
     const verificationInputRef = useRef<HTMLInputElement | null>(null);
-    const { email, isError } = useAppSelector((state) => state.user);
     const [verificationCode, setVerificationCode] = useState<string>('');
+    const email = useAppSelector(selectEmail);
+    const isError = useAppSelector(selectIsError);
 
     const handleVerificationInputChange = (value: string) => {
         setVerificationCode(value);
