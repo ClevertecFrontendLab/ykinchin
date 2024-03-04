@@ -59,7 +59,7 @@ const NewFeedbackModal = () => {
                 </CustomButton>,
             ]}
         >
-            <Form style={{ padding: '14px 24px 24px' }}>
+            <Form style={{ padding: '14px 24px 24px', width: '100%' }}>
                 <Space direction='vertical' size='middle' style={{ width: '100%' }}>
                     <Form.Item required noStyle>
                         <CustomRate
