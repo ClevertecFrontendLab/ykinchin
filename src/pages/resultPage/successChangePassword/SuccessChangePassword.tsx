@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 
-const SuccessChangePassword: FC = () => {
+const SuccessChangePassword = () => {
     const prevLocation = usePrevLocation();
 
     if (prevLocation !== PATHS.changePasswordError && prevLocation !== PATHS.changePassword) {
@@ -19,7 +17,7 @@ const SuccessChangePassword: FC = () => {
             resultDescription={
                 <>
                     Теперь можно войти в аккаунт, используя
-                    <br /> свой e-mail и пароль
+                    <p style={{ marginBottom: 0 }}> свой e-mail и пароль</p>
                 </>
             }
             btnText='Вход'

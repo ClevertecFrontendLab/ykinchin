@@ -1,7 +1,7 @@
+import { CSSProperties, ReactNode } from 'react';
 import { Card } from 'antd';
-import { CSSProperties, FC, ReactNode } from 'react';
 
-interface CardProps {
+interface Props {
     children: ReactNode;
     title?: ReactNode;
     bordered?: boolean;
@@ -12,7 +12,7 @@ interface CardProps {
     size?: 'default' | 'small';
 }
 
-const CustomCard: FC<CardProps> = ({
+const CustomCard = ({
     children,
     title,
     bordered = false,
@@ -21,20 +21,18 @@ const CustomCard: FC<CardProps> = ({
     style,
     size = 'small',
     className,
-}) => {
-    return (
-        <Card
-            title={title}
-            bordered={bordered}
-            style={style}
-            headStyle={headStyle}
-            bodyStyle={bodyStyle}
-            size={size}
-            className={className}
-        >
-            {children}
-        </Card>
-    );
-};
+}: Props) => (
+    <Card
+        title={title}
+        bordered={bordered}
+        style={style}
+        headStyle={headStyle}
+        bodyStyle={bodyStyle}
+        size={size}
+        className={className}
+    >
+        {children}
+    </Card>
+);
 
 export default CustomCard;

@@ -1,9 +1,7 @@
+import React, { useEffect, useRef, useState } from 'react';
 import { Space, Typography } from 'antd';
-import React, { FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
-
-import styles from './confirmEmail.module.scss';
 
 import ResultCard from '@components/resultCard/ResultCard';
 import { PATHS } from '@constants/PATHS';
@@ -11,15 +9,19 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { confirmEmail } from '@redux/thunks/confirmEmail';
+import { selectEmail, selectIsError } from '@redux/userSlice/selectors';
 
-const ConfirmEmail: FC = () => {
-    const location = useLocation();
+import styles from './confirmEmail.module.scss';
+
+const ConfirmEmail = () => {
+    const { pathname } = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
     const verificationInputRef = useRef<HTMLInputElement | null>(null);
-    const { email, isError } = useAppSelector((state) => state.user);
     const [verificationCode, setVerificationCode] = useState<string>('');
+    const email = useAppSelector(selectEmail);
+    const isError = useAppSelector(selectIsError);
 
     const handleVerificationInputChange = (value: string) => {
         setVerificationCode(value);
@@ -43,7 +45,7 @@ const ConfirmEmail: FC = () => {
         dispatch(confirmEmail({ email: email, code: code }));
     };
 
-    if (prevLocation !== PATHS.auth && prevLocation !== location.pathname) {
+    if (prevLocation !== PATHS.auth && prevLocation !== pathname) {
         return <Navigate to={PATHS.auth} />;
     }
 
@@ -58,9 +60,20 @@ const ConfirmEmail: FC = () => {
             }
             resultDescription={
                 <>
-                    Мы отправили вам на e-mail {isMobile && <br />}
-                    <strong>{email}</strong> <br />
-                    шестизначный код. Введите его в поле ниже.
+                    <p className={styles.newLineText}>
+                        Мы отправили вам на e-mail
+                        {isMobile ? (
+                            <p className={styles.newLineText}>
+                                <strong>{email}</strong>
+                            </p>
+                        ) : (
+                            <strong>{email}</strong>
+                        )}
+                    </p>
+                    <p className={styles.newLineText}>
+                        {' '}
+                        шестизначный код. Введите его в поле ниже.
+                    </p>
                 </>
             }
         >
@@ -82,7 +95,12 @@ const ConfirmEmail: FC = () => {
                     }}
                 />
                 <Typography.Text type='secondary'>
-                    Не пришло письмо? Проверьте {isMobile && <br />} папку Спам.
+                    Не пришло письмо? Проверьте
+                    {isMobile ? (
+                        <p className={styles.newLineText}> папку Спам.</p>
+                    ) : (
+                        <> папку Спам.</>
+                    )}
                 </Typography.Text>
             </Space>
         </ResultCard>

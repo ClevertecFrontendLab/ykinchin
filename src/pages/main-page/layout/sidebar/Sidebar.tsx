@@ -1,7 +1,5 @@
+import { useState } from 'react';
 import { Layout, Typography } from 'antd';
-import { FC, useState } from 'react';
-
-import styles from './sidebar.module.scss';
 
 import CustomButton from '@components/customButton/CustomButton';
 import IconWrapper from '@components/icons/IconWrapper';
@@ -10,12 +8,15 @@ import Logout from '@components/icons/svgs/Logout';
 import ShortLogo from '@components/icons/svgs/ShortLogo';
 import { useAppDispatch } from '@hooks/reduxHooks';
 import useMediaQuery from '@hooks/useMediaQuery';
+import { logout } from '@redux/authSlice/authSlice';
 import { history } from '@redux/configure-store';
-import { logout } from '@redux/slices/authSlice';
+
 import MenuToggler from './components/menuToggler/MenuToggler';
 import SideMenu from './components/sideMenu/SideMenu';
 
-const Sidebar: FC = () => {
+import styles from './sidebar.module.scss';
+
+const Sidebar = () => {
     const [isOpened, setIsOpened] = useState(false);
     const dispatch = useAppDispatch();
     const isBelowMediumScreen = useMediaQuery('(max-width:640px)');

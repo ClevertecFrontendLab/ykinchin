@@ -1,0 +1,29 @@
+@import '../../styles/media';
+
+.wrapper {
+    height: 100%;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+
+    @include m {
+        padding: 24px 16px;
+    }
+}
+
+.listFull {
+    max-height: 950px;
+    gap: 112px;
+
+    @include m {
+        max-height: 1168px;
+    }
+}
+
+.listShort {
+    justify-content: start;
+    gap: 112px;
+}

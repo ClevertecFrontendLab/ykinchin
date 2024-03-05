@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import ResultCard from '@components/resultCard/ResultCard';
@@ -7,11 +6,13 @@ import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 import { registration } from '@redux/thunks/registerUser';
+import { selectEmail, selectPassword } from '@redux/userSlice/selectors';
 
-const ErrorRetryReg: FC = () => {
+const ErrorRetryReg = () => {
     const prevLocation = usePrevLocation();
     const dispatch = useAppDispatch();
-    const { email, password } = useAppSelector((state) => state.user);
+    const email = useAppSelector(selectEmail);
+    const password = useAppSelector(selectPassword);
 
     const onRetryHandler = async () => {
         history.back();
@@ -31,8 +32,8 @@ const ErrorRetryReg: FC = () => {
                 resultTitle='Данные не сохранились'
                 resultDescription={
                     <>
-                        Что-то пошло не так и ваша регистрация <br /> не завершилась. Попробуйте ещё
-                        раз.
+                        Что-то пошло не так и ваша регистрация
+                        <p style={{ marginBottom: 0 }}> не завершилась. Попробуйте ещё раз.</p>
                     </>
                 }
                 btnText='Повторить'

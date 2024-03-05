@@ -1,19 +1,33 @@
-import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import React from 'react';
 import { Card, Col, Layout, List, Row, Typography } from 'antd';
-import React, { FC } from 'react';
-
-import styles from './content.module.scss';
-
-import useMediaQuery from '@hooks/useMediaQuery';
 import { IContentCard } from 'src/shared/types';
+
+import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import useMediaQuery from '@hooks/useMediaQuery';
+
 import BottomContent from './components/bottomContent/BottomContent';
 import ContentCard from './components/contentCard/ContentCard';
 
-const listData: string[] = [
-    'планировать свои тренировки на каледаре, выбирая тип и уровень нагрузки;',
-    `отслеживать свои достижения в разделе статистики, сравнивая свои результаты\nс нормами и рекордами;`,
-    `создавать свой профиль, где ты можешь загружать свои фото, видео и отзывы\nо тренировках;`,
-    'выполнять расписанные тренировки для разных частей тела, следуя подробным инструкциям и советам профессиональных тренеров;',
+import styles from './content.module.scss';
+
+const listData: { id: string; content: string }[] = [
+    {
+        id: '1',
+        content: 'планировать свои тренировки на каледаре, выбирая тип и уровень нагрузки;',
+    },
+    {
+        id: '2',
+        content: `отслеживать свои достижения в разделе статистики, сравнивая свои результаты\nс нормами и рекордами;`,
+    },
+    {
+        id: '3',
+        content: `создавать свой профиль, где ты можешь загружать свои фото, видео и отзывы\nо тренировках;`,
+    },
+    {
+        id: '4',
+        content:
+            'выполнять расписанные тренировки для разных частей тела, следуя подробным инструкциям и советам профессиональных тренеров;',
+    },
 ];
 
 const cardData: IContentCard[] = [
@@ -30,11 +44,11 @@ const cardData: IContentCard[] = [
     { title: 'Заполнить профиль', icon: <IdcardOutlined />, buttonText: 'Профиль' },
 ];
 
-const Content: FC = () => {
+const Content = () => {
     const isAboveMediumScreen = useMediaQuery('(min-width:835px)');
     const isMobile = useMediaQuery('(max-width:425px)');
-
     const { Content } = Layout;
+
     return (
         <Content className={styles.content}>
             <div className={styles.wrapper}>
@@ -60,15 +74,17 @@ const Content: FC = () => {
                                                     {isAboveMediumScreen ? (
                                                         <>
                                                             {'\u2014 '}
-                                                            {item.split('\n').map((line, index) => (
-                                                                <React.Fragment key={index}>
-                                                                    {line}
-                                                                    <br />
-                                                                </React.Fragment>
-                                                            ))}
+                                                            {item.content
+                                                                .split('\n')
+                                                                .map((line) => (
+                                                                    <React.Fragment key={item.id}>
+                                                                        {line}
+                                                                        <br />
+                                                                    </React.Fragment>
+                                                                ))}
                                                         </>
                                                     ) : (
-                                                        <>{'\u2014 ' + item}</>
+                                                        <>{'\u2014 ' + item.content}</>
                                                     )}
                                                 </Typography.Text>
                                             </List.Item>

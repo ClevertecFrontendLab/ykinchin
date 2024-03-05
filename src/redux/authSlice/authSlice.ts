@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
 
 export interface AuthState {
     isAuth: boolean;
@@ -24,12 +24,7 @@ const authSlice = createSlice({
             state.accessToken = action.payload.accessToken;
             state.isAuth = true;
             if (action.payload.remeberCheck) {
-                localStorage.setItem(
-                    'user',
-                    JSON.stringify({
-                        token: action.payload.accessToken,
-                    }),
-                );
+                localStorage.setItem('user', JSON.stringify(action.payload.accessToken));
             }
         },
         logout: (state) => {

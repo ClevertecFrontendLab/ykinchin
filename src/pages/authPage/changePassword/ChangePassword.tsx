@@ -1,8 +1,6 @@
+import { ChangeEvent, useState } from 'react';
 import { Card, Form, Space, Typography } from 'antd';
-import { ChangeEvent, FC, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-
-import styles from './changePassword.module.scss';
 
 import CustomButton from '@components/customButton/CustomButton';
 import PasswordInput from '@components/passwordInput/PasswordInput';
@@ -13,8 +11,10 @@ import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { changePassword } from '@redux/thunks/changePassword';
 
-const ChangePassword: FC = () => {
-    const location = useLocation();
+import styles from './changePassword.module.scss';
+
+const ChangePassword = () => {
+    const { pathname } = useLocation();
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
     const dispatch = useAppDispatch();
@@ -33,7 +33,7 @@ const ChangePassword: FC = () => {
         );
     };
 
-    if (prevLocation !== PATHS.confirmEmail && prevLocation !== location.pathname) {
+    if (prevLocation !== PATHS.confirmEmail && prevLocation !== pathname) {
         return <Navigate to={PATHS.auth} />;
     }
 

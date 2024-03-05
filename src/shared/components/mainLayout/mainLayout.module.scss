@@ -1,0 +1,17 @@
+@use '../../../styles/variables';
+
+.layout {
+    margin: 0 auto;
+    max-width: 1440px;
+    background: inherit;
+    position: relative;
+
+    .breadCrumbs {
+        background-color: variables.$geekblue-1;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        padding: 16px 0 16px 24px;
+    }
+}

@@ -1,10 +1,12 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { createBrowserHistory } from 'history';
 import { createReduxHistoryContext } from 'redux-first-history';
 
-import authReducer from './slices/authSlice';
-import loaderSlice from './slices/loaderSlice';
-import userSlice from './slices/userSlice';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import authReducer from './authSlice/authSlice';
+import feedbackSlice from './feedbackSlice/feedbackSlice';
+import loaderSlice from './loaderSlice/loaderSlice';
+import userSlice from './userSlice/userSlice';
 
 const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHistoryContext({
     history: createBrowserHistory(),
@@ -15,6 +17,7 @@ export const store = configureStore({
     reducer: combineReducers({
         auth: authReducer,
         user: userSlice,
+        feedback: feedbackSlice,
         loader: loaderSlice,
         router: routerReducer,
     }),

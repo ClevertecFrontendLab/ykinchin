@@ -1,0 +1,51 @@
+@use '../../../../styles/variables';
+@import '../../../../styles/media';
+
+.card {
+    min-height: 128px;
+    width: 100%;
+
+    .comment {
+        display: flex;
+        gap: 14px;
+        flex-direction: row;
+
+        @include m {
+            flex-direction: column;
+        }
+
+        .author {
+            width: 172px;
+            min-width: 172px;
+            align-items: center;
+            flex-direction: column;
+
+            @include m {
+                flex-direction: row;
+            }
+
+            .userName {
+                text-align: center;
+                display: flex;
+                font-size: 16px;
+                line-height: 130%;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            margin-top: -4px;
+            gap: 8px;
+
+            @include m {
+                gap: 10px;
+            }
+
+            .message {
+                color: variables.$neutral-grey-7;
+                word-break: break-all;
+            }
+        }
+    }
+}

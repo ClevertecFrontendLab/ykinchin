@@ -8,6 +8,7 @@
 @import '../pages/authPage/signIn/signInPage.module.scss';
 @import '../pages/authPage/authPage.module.scss';
 @import '../shared/components/resultCard/resultCard.module.scss';
+@import '../shared/components/customRate/customRate.module.scss';
 
 html,
 body,

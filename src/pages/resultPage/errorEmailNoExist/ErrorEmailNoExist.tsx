@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import CustomButton from '@components/customButton/CustomButton';
@@ -8,7 +7,7 @@ import useMediaQuery from '@hooks/useMediaQuery';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
 
-const ErrorEmailNoExist: FC = () => {
+const ErrorEmailNoExist = () => {
     const prevLocation = usePrevLocation();
     const isMobile = useMediaQuery('(max-width:425px)');
 
@@ -27,8 +26,12 @@ const ErrorEmailNoExist: FC = () => {
             }
             resultDescription={
                 <>
-                    Мы не нашли в базе вашего e-mail. Попробуйте {!isMobile && <br />} войти с
-                    другим e-mail.
+                    Мы не нашли в базе вашего e-mail. Попробуйте{' '}
+                    {!isMobile ? (
+                        <p style={{ marginBottom: 0 }}>войти с другим e-mail.</p>
+                    ) : (
+                        <>войти с другим e-mail.</>
+                    )}
                 </>
             }
         >

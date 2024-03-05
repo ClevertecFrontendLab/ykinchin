@@ -1,12 +1,12 @@
-import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { PATHS } from '@constants/PATHS';
 import usePrevLocation from '@hooks/usePrevLocation';
 import { history } from '@redux/configure-store';
+
 import ResultCard from '../../../shared/components/resultCard/ResultCard';
 
-const SuccessPage: FC = () => {
+const SuccessPage = () => {
     const prevLocation = usePrevLocation();
 
     if (prevLocation !== PATHS.registration) {
@@ -20,7 +20,10 @@ const SuccessPage: FC = () => {
             resultDescription={
                 <>
                     Регистрация прошла успешно. Зайдите
-                    <br /> в приложение, используя свой e-mail и пароль.
+                    <p style={{ marginBottom: 0 }}>
+                        {' '}
+                        в приложение, используя свой e-mail и пароль.
+                    </p>
                 </>
             }
             btnText='Войти'

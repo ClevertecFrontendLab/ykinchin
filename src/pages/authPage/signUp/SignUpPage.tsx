@@ -1,15 +1,17 @@
+import { ChangeEvent, useState } from 'react';
+import { Button, Form, Space } from 'antd';
+
 import { GooglePlusOutlined } from '@ant-design/icons';
 import EmailInput from '@components/emailInput/EmailInput';
 import PasswordInput from '@components/passwordInput/PasswordInput';
 import RepeatPasswordInput from '@components/repeatPasswordInput/RepeatPasswordInput';
 import { useAppDispatch } from '@hooks/reduxHooks';
-import { setUser } from '@redux/slices/userSlice';
 import { registration } from '@redux/thunks/registerUser';
-import { Button, Form, Space } from 'antd';
-import { ChangeEvent, FC, useState } from 'react';
+import { setUser } from '@redux/userSlice/userSlice';
+
 import styles from './signUpPage.module.scss';
 
-const SignUpPage: FC = () => {
+const SignUpPage = () => {
     const dispatch = useAppDispatch();
     const [form] = Form.useForm();
     const [formValue, setFormValue] = useState({ email: '', password: '', passwordRepeat: '' });

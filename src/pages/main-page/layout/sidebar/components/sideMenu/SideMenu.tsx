@@ -1,11 +1,10 @@
-import { CalendarTwoTone, HeartFilled, IdcardOutlined, TrophyFilled } from '@ant-design/icons';
 import { Menu, MenuProps, Typography } from 'antd';
-import { FC } from 'react';
-
-import styles from './sideMenu.module.scss';
-
-import useMediaQuery from '@hooks/useMediaQuery';
 import { TMenuButton } from 'src/shared/types';
+
+import { CalendarTwoTone, HeartFilled, IdcardOutlined, TrophyFilled } from '@ant-design/icons';
+import useMediaQuery from '@hooks/useMediaQuery';
+
+import s from './sideMenu.module.scss';
 
 const menuData: TMenuButton[] = [
     {
@@ -18,11 +17,11 @@ const menuData: TMenuButton[] = [
     { key: 4, icon: <IdcardOutlined />, buttonText: 'Профиль' },
 ];
 
-interface SideMenuProps {
+type Props = {
     isOpened: boolean;
-}
+};
 
-const SideMenu: FC<SideMenuProps> = ({ isOpened }) => {
+const SideMenu = ({ isOpened }: Props) => {
     const isMobile = useMediaQuery('(max-width:425px)');
 
     const { Text } = Typography;
@@ -37,7 +36,7 @@ const SideMenu: FC<SideMenuProps> = ({ isOpened }) => {
         <Menu
             mode='vertical'
             items={items}
-            className={isOpened ? styles.menu : styles.menuCollapsed}
+            className={isOpened ? s.menu : s.menuCollapsed}
             style={{
                 width: '100%',
                 display: 'flex',
